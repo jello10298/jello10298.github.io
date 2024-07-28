@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What the hell is this going to be</title>
+    <style>
+        html {
+            background-color: #ef7e00;
+        }
+        body {
+            position: relative;
+            color: #f0a51c;
+        }
+        .guitarStencil {
+            background-image: url(../guitar.png);
+        }
+        .guitar,.guitarStencil {
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 50%;
+            width: 596px;
+            height: 930px;
+            top: 200px;
+            transform: translateX(-50%);
+        }
+        .guitar {
+            /* opacity: 0.1; */
+        }
+        .neck {
+            position: absolute;
+            background-color: #06060f;
+            height: 410px;
+            width: 50px;
+            top: 156px;
+            left: 282px;
+        }
+        .tuner {
+            background-color: red;
+        }
+        .neck .string {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 626px;
+            background-color: silver;
+            width: 2px;
+        }
+        .string1 { left: 8px; }
+        .string2 { left: 16px; }
+        .string3 { left: 24px; }
+        .string4 { left: 32px; }
+        .string5 { left: 40px; }
+
+        .body {
+            position: absolute;
+            border-radius: 50%;
+            height: 210px;
+            width: 256px;
+            background-color: #f0a51c;
+            left: 177px;
+            top: 480px;
+        }
+        .butt {
+            position: absolute;
+            border-radius: 50%;
+            height: 210px;
+            width: 256px;
+            background-color: #f0a51c;
+            left: 177px;
+            top: 480px;
+        }
+        </style>
+</head>
+<body>
+    <div class="guitarStencil"></div>
+    <div class="guitar" >
+        <span class="body">
+           <span class="butt"></span>
+        </span>
+        <span class="head">
+            <span class="tuner"></span>
+        </span>
+        <span class="neck">
+            <span class="string string1"></span>
+            <span class="string string2"></span>
+            <span class="string string3"></span>
+            <span class="string string4"></span>
+            <span class="string string5"></span>
+        </span>
+    </div>
+</body>
+</html>
