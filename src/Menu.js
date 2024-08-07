@@ -96,19 +96,19 @@ function Menu() {
             <div className="menu-inner">
 
                 <ul>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern'} target={'_blank'}>About</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Portfolio'}>Portfolio</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Resume'}>Resume</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Emulator'}>Emulator</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Emulator'}>Simulator</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Liquid+Neural+Network'}>Liquid Neural Network</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Roblox'}>Roblox</a></li>
-                    <li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Minecraft'}>Minecraft</a></li>
-                    <li>Gambling is bad ...</li>
-                    <li>Witches are bad ...</li>
-                    <li>Saints are good ...</li>
-                    <li>Puppies are good ...</li>
-                    <li>ya know, just in case<br />YA FORGOT</li>
+                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern'} target={'_blank'}>About</a></li>*/}
+                    <li><a href={'resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}>Resume</a></li>
+                    <li><a href={'resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}>Cirum Vitae</a></li>
+                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Portfolio'}>Portfolio</a></li>*/}
+
+                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+NES+Emulator'}>NES Emulator</a></li>*/}
+                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Flight+Simulator+'}>Flight Simulator</a></li>*/}
+
+                    {/*<li>Gambling is bad ...</li>*/}
+                    {/*<li>Witches are bad ...</li>*/}
+                    {/*<li>Saints are good ...</li>*/}
+                    {/*<li>Puppies are good ...</li>*/}
+                    {/*<li>ya know, just in case<br/>YA FORGOT</li>*/}
                 </ul>
             </div>
 
