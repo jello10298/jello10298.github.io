@@ -37,7 +37,7 @@ function TarotGame() {
     };
 
     return (
-        <div className="gameContainer" style={{marginLeft: '60px'}}>
+        <div className="gameContainer">
             <div className="gameScreen" ref={gameScreen}>
                 <h2 className="gameName">Tarot Game</h2>
                 <div className="backgroundImage" onClick={() => drawCard()} />
