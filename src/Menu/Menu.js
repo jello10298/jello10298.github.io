@@ -78,7 +78,7 @@ function Menu() {
             blobPath.attr('d', newCurve2);
             blob.width(curveX+60);
             hamburger.css('transform', 'translate('+curveX+'px, '+curveY+'px)');
-            $('h2').css('transform', 'translateY('+curveY+'px)');
+            // $('h2').css('transform', 'translateY('+curveY+'px)');
 
             window.requestAnimationFrame(svgCurve);
         }
@@ -93,8 +93,8 @@ function Menu() {
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-            <div className="menu-inner">
 
+            <div className="menu-inner">
                 <ul>
                     {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern'} target={'_blank'}>About</a></li>*/}
                     <li><a href={'resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}>Resume</a></li>

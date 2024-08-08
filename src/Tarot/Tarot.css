@@ -1,0 +1,36 @@
+.gameContainer {
+    background-color: #010714;
+    height: 100vh;
+}
+
+.backgroundImage {
+    /* Adjust as desired to reference the correct image */
+    background-image: url('../../public/Crystal-Ball.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 60px;
+    height: 100vh; /* Full height */
+    width: calc(100vw + 60px); /* Full width */
+    transition: height 0.1s;
+}
+
+.gameName {
+    margin: 0;
+    position: absolute;
+    left: calc(50% + 30px);
+    transform: translateX(-50%);
+}
+
+.cardBackground.white {
+    background-color: transparent;
+}
+
+.card img {
+    width: 100%;
+}
+
+.cardName {
+    color: #fff;
+}
