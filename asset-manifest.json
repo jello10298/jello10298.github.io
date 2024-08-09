@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e9ae433e.css",
+    "main.js": "/static/js/main.7413c160.js",
+    "static/js/453.20976b5e.chunk.js": "/static/js/453.20976b5e.chunk.js",
+    "static/media/Crystal-Ball.jpg": "/static/media/Crystal-Ball.7c951c41dd86191d3d6f.jpg",
+    "index.html": "/index.html",
+    "main.e9ae433e.css.map": "/static/css/main.e9ae433e.css.map",
+    "main.7413c160.js.map": "/static/js/main.7413c160.js.map",
+    "453.20976b5e.chunk.js.map": "/static/js/453.20976b5e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9ae433e.css",
+    "static/js/main.7413c160.js"
+  ]
+}
