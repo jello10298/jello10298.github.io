@@ -2,11 +2,11 @@ import React, {createRef, useState} from 'react';
 import tarotData from './data';
 import './Tarot.css';
 
-import { styled } from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import { Grid } from "@mui/material";
+import {Grid} from "@mui/material";
 
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
     padding: theme.spacing(1),
@@ -37,10 +37,9 @@ function TarotGame() {
     };
 
     return (
-        <div className="gameContainer">
+        <>
             <div className="gameScreen" ref={gameScreen}>
-                <h2 className="gameName">Tarot Game</h2>
-                <div className="backgroundImage" onClick={() => drawCard()} />
+                <div className="backgroundImage" onClick={() => drawCard()}/>
             </div>
 
             <Grid container spacing={2}>
@@ -49,16 +48,34 @@ function TarotGame() {
                         <Grid item md={4} key={index}>
                             <Item className="cardBackground white">
                                 <div className="card">
-                                    <h2 className="cardName">{card.name}</h2>
-                                    <img src={'dali/' + card.image} alt={card.name} />
-                                    <p style={{color: '#fff'}}>{card.desc}</p>
+                                    <h2 className={'alex-brush-regular tarotHeading'}>
+                                        {
+                                            function () {
+                                                switch (index) {
+                                                    case 0:
+                                                        return 'Your Past';
+                                                    case 1:
+                                                        return 'Your Present';
+                                                    case 2:
+                                                        return 'Your Future';
+                                                    default:
+                                                        return null;
+                                                }
+                                            }()
+                                        }
+                                    </h2>
+                                        <img src={'dali/' + card.image} alt={card.name}/>
+                                        <div>
+                                            <h2 className="cardName">{card.name}</h2>
+                                            <p className="cardDesc"><b>{card.title}</b> - {card.desc}</p>
+                                        </div>
                                 </div>
                             </Item>
                         </Grid>
                     )
                 }
             </Grid>
-        </div>
+        </>
     )
 }
 

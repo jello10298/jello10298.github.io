@@ -58,11 +58,11 @@
     bottom: 0;
 }
 
-h1 {
-    position: fixed;
-    right: 0;
-    margin: 0;
-}
+/*h1 {*/
+/*    position: fixed;*/
+/*    right: 0;*/
+/*    margin: 0;*/
+/*}*/
 
 ul {
     padding: 0;
@@ -81,4 +81,15 @@ ul li {
 
 a {
     color: #282c34;
+}
+
+.linkedInLogo {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.linkedInLogo img {
+    width: 100px;
 }

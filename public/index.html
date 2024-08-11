@@ -12,12 +12,18 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3QFZH67KS"></script>
     <script>
+      if (window.location.href.indexOf('localhost') !== 0) {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-W3QFZH67KS');
+      }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&display=swap" rel="stylesheet">
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon_io/android-chrome-192x192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a

@@ -2,18 +2,26 @@ import './App.css';
 import Menu from "../Menu/Menu";
 import TarotGame from "../Tarot/Tarot";
 import CssBaseline from '@mui/material/CssBaseline';
+import {Route, Routes, BrowserRouter as Router} from "react-router-dom";
+import Home from "../Home/Home";
+import Portfolio from "../Portfolio/Portfolio";
 
 function App() {
     return (
         <div className="App">
-            <CssBaseline />
-            <Menu />
-            <header className="App-header">
-                {/*<img src='/Firefly-Dali-inspired-image-of-the-magician-tarot-card-that-contains-a-transparent-Augusta-window-in.png' alt={'Magician Tarot Card'} />*/}
-                <TarotGame />
-            </header>
+            <CssBaseline/>
+            <Menu/>
+            <div className={'pageContainer'}>
+                <Router>
+                    <Routes>
+                        <Route path={'/'} element={<Home/>}/>
+                        <Route path={'/portfolio'} element={<Portfolio/>}/>
+                        <Route path={'/tarot'} element={<TarotGame/>}/>
+                    </Routes>
+                </Router>
+            </div>
         </div>
-    );
+);
 }
 
 export default App;
