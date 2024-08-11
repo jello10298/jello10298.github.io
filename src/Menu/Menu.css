@@ -7,6 +7,7 @@
     transform: translateX(-100%);
     left: 60px;
     top: 0;
+    z-index: 1;
 }
 
 #menu.expanded {
@@ -92,4 +93,8 @@ a {
 
 .linkedInLogo img {
     width: 100px;
+}
+
+blockquote {
+    margin: 0 60px;
 }

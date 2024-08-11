@@ -97,14 +97,13 @@ function Menu() {
             <div className="menu-inner">
                 <ul>
                     <li><a href={'/'}>Home</a></li>
-                    <li><a href={'/tarot'}>Tarot Game</a></li>
+                    {/*<li><a href={'/tarot'}>Tarot Game</a></li>*/}
                     <li><a href={'resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Resume</a></li>
                     <li><a href={'resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'} rel={'noreferrer'}>Cirum
                         Vitae</a></li>
                     <li><a href={'/portfolio'}>Portfolio</a></li>
-                    {/*<li>*/}
-                    {/*</li>*/}
+                    <li><a href={'/about'}>About</a></li>
 
                     {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Portfolio'}>Portfolio</a></li>*/}
                     {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+NES+Emulator'}>NES Emulator</a></li>*/}
@@ -116,7 +115,10 @@ function Menu() {
                     {/*<li>ya know, just in case<br/>YA FORGOT</li>*/}
                 </ul>
                 <a href={'https://www.linkedin.com/in/angelogonzalez1/'} target={'_blank'} className={'linkedInLogo'}>
-                    <img src={'LinkedIn_Logo.svg'}/>
+                    <img src={'LinkedIn_Logo.svg'}/> <br />
+                    {/*<blockquote>*/}
+                    {/*“Imitation is the sincerest form of flattery that mediocrity can pay to greatness”*/}
+                    {/*</blockquote>*/}
                 </a>
             </div>
 

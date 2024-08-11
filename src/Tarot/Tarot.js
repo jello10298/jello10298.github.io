@@ -5,6 +5,7 @@ import './Tarot.css';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Grid} from "@mui/material";
+import ReloadGame from "../ReloadGame/ReloadGame";
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -16,6 +17,7 @@ const Item = styled(Paper)(({theme}) => ({
 
 function TarotGame() {
     const [cards, setCards] = useState([]);
+    const [showReloadGame, setShowReloadGame] = useState(false);
 
     const gameScreen = createRef();
 
@@ -34,6 +36,7 @@ function TarotGame() {
         gameScreen.current.style.height = 0;
         gameScreen.current.style.opacity = 0;
         gameScreen.current.style.pointerEvents = 'none';
+        setShowReloadGame(true);
     };
 
     return (
@@ -41,12 +44,20 @@ function TarotGame() {
             <div className="gameScreen" ref={gameScreen}>
                 <div className="backgroundImage" onClick={() => drawCard()}/>
             </div>
-
+            {/*<ReloadGame />*/}
             <Grid container spacing={2}>
                 {
                     cards.map((card, index) =>
                         <Grid item md={4} key={index}>
                             <Item className="cardBackground white">
+                                {
+                                    index === 0 &&
+                                    <div className={'reading1'}>I.</div>
+                                }
+                                {
+                                    index === 2 &&
+                                    <div className={'reading2'}>II</div>
+                                }
                                 <div className="card">
                                     <h2 className={'alex-brush-regular tarotHeading'}>
                                         {
@@ -75,6 +86,12 @@ function TarotGame() {
                     )
                 }
             </Grid>
+            {
+                showReloadGame &&
+                <div className={'tryAgain'} onClick={() => drawCard()}>
+                    {/*Try Again*/}
+                </div>
+            }
         </>
     )
 }
