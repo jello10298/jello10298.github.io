@@ -52,11 +52,11 @@ function TarotGame() {
                             <Item className="cardBackground white">
                                 {
                                     index === 0 &&
-                                    <div className={'reading1'}>I.</div>
+                                    <div className={'reading1'} title={'Reading 1'}>I.</div>
                                 }
                                 {
                                     index === 2 &&
-                                    <div className={'reading2'}>II</div>
+                                    <div className={'reading2'} title={'Reading 2'}>II</div>
                                 }
                                 <div className="card">
                                     <h2 className={'alex-brush-regular tarotHeading'}>
