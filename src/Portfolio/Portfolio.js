@@ -53,7 +53,7 @@ function Portfolio() {
                     <Tile name={"UrCove"} image={'/portfolio/Hyatt/urcove.png'}/>
 
                     <h3>Boundless Collection</h3>
-                    <Tile name={"Miraval"} image={'/portfolio/Hyatt/Miraval.png'}/>
+                    <Tile name={"Miraval"} image={'/portfolio/Hyatt/miraval.png'}/>
                     <Tile name={"Alila"} image={'/portfolio/Hyatt/alila.png'}/>
                     <Tile name={"Andaz"} image={'/portfolio/Hyatt/andaz.png'}/>
                     <Tile name={"Thompson"} image={'/portfolio/Hyatt/thompson.png'}/>
