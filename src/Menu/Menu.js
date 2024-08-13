@@ -99,9 +99,9 @@ function Menu() {
                 <ul>
                     <li><Link to={'/'}>Home</Link></li>
                     {/*<li><a href={'/tarot'}>Tarot Game</a></li>*/}
-                    <li><a href={'resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
+                    <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Resume</a></li>
-                    <li><a href={'resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}
+                    <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Cirum
                         Vitae</a></li>
                     <li><Link to={'/portfolio'}>Portfolio</Link></li>

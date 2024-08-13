@@ -63,7 +63,7 @@ export default function Canvas(props) {
     if (props.points.length === 0) {
       return;
     }
-    let map = new THREE.PlaneBufferGeometry(Math.pow(2, props.n)+1, Math.pow(2, props.n)+1, Math.pow(2, props.n), Math.pow(2, props.n));
+    let map = new THREE.PlaneGeometry(Math.pow(2, props.n)+1, Math.pow(2, props.n)+1, Math.pow(2, props.n), Math.pow(2, props.n));
 
     let expandedArray = [];
     for (let i = 0; i < props.points.length; i++) {
