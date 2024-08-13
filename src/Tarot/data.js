@@ -226,7 +226,7 @@ const data = [
     {
         "name": "Seven of Wands",
         "title": "A New Level",
-        "desc": "All existing facts can be changed by your actions. But doing just for the sake of doing and morbid ambition will only harm you. It is of utmost importance to reach a new level and to. Use your power wisely and in a relaxed manner.",
+        "desc": "All existing facts can be changed by your actions. But doing just for the sake of doing and morbid ambition will only harm you. It is of utmost importance to reach a new level and to use your power wisely and in a relaxed manner.",
         "type": "Minor Arcana",
         "image": "33-Seven-of-Wands.jpg"
     },

@@ -1,50 +1,22 @@
+.TarotGame {
+    width: calc(100vw - 100px);
+}
 
-.backgroundImage {
-    /* Adjust as desired to reference the correct image */
+.welcome {
     background-image: url('../../public/Crystal-Ball.jpg');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     top: 0;
     left: 60px;
-    height: 100vh; /* Full height */
-    width: calc(100vw + 60px); /* Full width */
-    transition: height 0.1s;
+    height: 100vh;
+    width: calc(100vw - 60px);
+}
+
+.readingContainer.grid {
+    margin: 16px auto 32px;
+    width: auto;
     max-width: 968px;
-}
-
-.reading1 {
-    font-family: Times New Roman, serif;
-    color: #717070;
-    font-size: 48px;
-    position: absolute;
-    left: -100px;
-    top: 54px;
-    transform: translateY(-50%);
-}
-
-.reading2 {
-    font-family: Times New Roman, serif;
-    color: #717070;
-    font-size: 38px;
-    position: absolute;
-    right: -90px;
-    top: 58px;
-    transform: translateY(-50%);
-    background-color: var(--menu-color);
-    border-radius: 50%;
-    height: 57px;
-    width: 57px;
-}
-
-.reading2::after {
-    content: '>';
-    display: block;
-    color: white;
-    position: absolute;
-    right: -30px;
-    top: 0;
-    font-weight: bold;
 }
 
 .gameName {
@@ -81,24 +53,14 @@
 .tryAgain {
     background-color: var(--menu-color);
     color: var(--background-color);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    min-width: 30px;
+    min-height: 30px;
+    position: relative;
+    margin: 0 auto 60px;
     cursor: pointer;
-}
-
-.tryAgain::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: var(--background-color);
-    width: 15px;
-    height: 15px;
+    text-align: center;
+    width: auto;
+    display: inline-block;
+    padding: 20px 30px;
+    border-radius: 15px;
 }

@@ -97,14 +97,14 @@ function Menu() {
 
             <div className="menu-inner">
                 <ul>
-                    <li><a href={'/'}>Home</a></li>
+                    <li><Link to={'/'}>Home</Link></li>
                     {/*<li><a href={'/tarot'}>Tarot Game</a></li>*/}
                     <li><a href={'resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Resume</a></li>
                     <li><a href={'resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Cirum
                         Vitae</a></li>
-                    <li><a href={'/portfolio'}>Portfolio</a></li>
+                    <li><Link to={'/portfolio'}>Portfolio</Link></li>
                     <li><Link to={'/about'}>About</Link></li>
 
                     {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Portfolio'}>Portfolio</a></li>*/}

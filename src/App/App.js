@@ -13,7 +13,7 @@ function App() {
             <CssBaseline/>
             <Router basename={'/'}>
                 <Menu/>
-                <div className={'pageContainer'}>
+                <div className={'pageContainer text-center'}>
                     <Routes>
                         <Route path={'/'} element={<TarotGame/>}/>
                         <Route path={'/about'} element={<Home/>}/>
@@ -23,7 +23,7 @@ function App() {
                 </div>
             </Router>
         </div>
-    );
+);
 }
 
 export default App;

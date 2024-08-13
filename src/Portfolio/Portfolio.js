@@ -1,10 +1,12 @@
+import DiamondSquare from "./Components/DiamondSquare";
 
 function Portfolio() {
     return (
-    <h1>
-        Portfolio
-    </h1>
+        <>
+            <h1>Portfolio</h1>
+            <DiamondSquare/>
+        </>
     );
 }
 
-export default Portfolio;;
+export default Portfolio;

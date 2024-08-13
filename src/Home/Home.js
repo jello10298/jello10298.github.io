@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Home() {
     return (
-        <div className="Home">
+        <>
             <h1 className={'alex-brush-regular my-name'}>Angelo Gonzalez</h1>
             <img
                 className={'homeImage'}
@@ -12,7 +12,7 @@ function Home() {
             <h2>The Magician</h2>
             <p>We all have natural talents, discover yours.</p>
             <Link to={'/tarot'}>Play Now</Link>
-        </div>
+        </>
     );
 }
 

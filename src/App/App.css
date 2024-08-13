@@ -16,19 +16,26 @@
   font-style: normal;
 }
 
+body {
+  overflow: hidden;
+}
 
 .App {
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   background-color: var(--background-color);
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .pageContainer {
+  display: inline-block;
   background-color: var(--background-color);
   height: 100vh;
   margin-left: 60px;
-  max-width: 968px;
+  width: calc(100vw - 60px);
+}
+
+.text-center {
   text-align: center;
 }
 
