@@ -534,7 +534,7 @@ const data = [
     {
         "name": "Nine of Coins",
         "title": "Mature Talents",
-        "desc": "Stop the internal dialogue, the nervous chattering of your inner voice. Find inner peace, your \u201cblue hour,\u201d by giving loving attention to your tasks and by joy fully recognizing your results.  Stop parroting the ideas of others or imitating their ever-changing moods. Find the fitting framework for your high-flying plans and your blossoming talents.",
+        "desc": "Stop the internal dialogue, the nervous chattering of your inner voice. Find inner peace, your \u201cblue hour,\u201d by giving loving attention to your tasks and by joyfully recognizing your results.  Stop parroting the ideas of others or imitating their ever-changing moods. Find the fitting framework for your high-flying plans and your blossoming talents.",
         "type": "Minor Arcana",
         "image": "77-Nine-of-Coins.jpg"
     },

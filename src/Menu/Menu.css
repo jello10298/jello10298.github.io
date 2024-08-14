@@ -7,7 +7,7 @@
     transform: translateX(-100%);
     left: 60px;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 #menu.expanded {
@@ -32,7 +32,7 @@
 
 #blob-path {
     height: 100%;
-    fill:  #FED057;
+    fill: #FED057;
 }
 
 .hamburger {
@@ -59,12 +59,6 @@
     bottom: 0;
 }
 
-/*h1 {*/
-/*    position: fixed;*/
-/*    right: 0;*/
-/*    margin: 0;*/
-/*}*/
-
 ul {
     padding: 0;
     list-style: none;
@@ -78,6 +72,28 @@ ul li {
     color: #282c34;
     font-family: sans-serif;
     padding: 20px 0;
+}
+
+ul li hr.styled {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    position: relative;
+    left: -46px;
+}
+
+ul li hr.styled:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }
 
 a {

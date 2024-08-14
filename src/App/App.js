@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import {Route, Routes, HashRouter as Router} from "react-router-dom";
 import Home from "../Home/Home";
 import Portfolio from "../Portfolio/Portfolio";
+import DiamondSquare from "../Portfolio/Components/DiamondSquare";
 
 function App() {
     return (
@@ -19,6 +20,9 @@ function App() {
                         <Route path={'/about'} element={<Home/>}/>
                         <Route path={'/portfolio'} element={<Portfolio/>}/>
                         <Route path={'/tarot'} element={<TarotGame/>}/>
+                        <Route path={'/landscape-generator'} element={<DiamondSquare/>}/>
+                        <Route path={'/nes-emulator'} element={<TarotGame/>}/>
+
                     </Routes>
                 </div>
             </Router>

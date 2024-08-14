@@ -106,9 +106,15 @@ function Menu() {
                         Vitae</a></li>
                     <li><Link to={'/portfolio'}>Portfolio</Link></li>
                     <li><Link to={'/about'}>About</Link></li>
-
-                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Northwestern+Portfolio'}>Portfolio</a></li>*/}
-                    {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+NES+Emulator'}>NES Emulator</a></li>*/}
+                    <li>
+                        <hr width={'80%'} className={'styled'} />
+                    </li>
+                    <li>
+                        <Link to={'/landscape-generator'}>Teraform</Link>
+                    </li>
+                    {/*<li>*/}
+                    {/*    <Link to={'/nes-emulator'}>NES Emulator</Link>*/}
+                    {/*</li>*/}
                     {/*<li><a href={'http://www.google.com/search?q=Angelo+Gonzalez+Flight+Simulator+'}>Flight Simulator</a></li>*/}
                     {/*<li>Gambling is bad ...</li>*/}
                     {/*<li>Witches are bad ...</li>*/}

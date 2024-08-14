@@ -18,6 +18,7 @@ function TarotGame() {
 
     const [cards, setCards] = useState([]);
     const [showReloadGame, setShowReloadGame] = useState(false);
+    const [isFlipped, setIsFlipped] = useState([false, false, false]);
 
     const welcomeScreen = createRef();
 
@@ -45,6 +46,22 @@ function TarotGame() {
             return true;
         }
         return false;
+    }
+
+    const flipCard = (index) => {
+        setIsFlipped(prevState => {
+            const newState = [...prevState];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    }
+
+    const allCardsFlipped = () => {
+        return isFlipped.every(value => value === true);
+    }
+
+    const resetGame = () => {
+        setIsFlipped([false, false, false]);
     }
 
     return (
@@ -76,10 +93,16 @@ function TarotGame() {
                                             }()
                                         }
                                     </h2>
-                                    <img src={'dali/' + card.image} alt={card.name}/>
-                                    <div>
-                                        <h2 className="cardName">{card.name}</h2>
-                                        <p className="cardDesc"><b>{card.title}</b> - {card.desc}</p>
+                                    <div className={`daliTarotCard ${isFlipped[index] ? 'flipped' : ''}`} onClick={() => {
+                                        flipCard(index);
+                                    }}>
+                                        <img src={'dali/' + card.image} alt={card.name} className={'daliTarotCardFront'}/>
+                                        <img src={'dali/card-back.jpg'} alt={card.name} className={'daliTarotCardBack'} />
+                                    </div>
+                                    <div className={`cardInfo ${isFlipped[index] ? 'flipped' : ''}`}>
+                                        <h2 className={'cardName'}>{card.name}</h2>
+                                        <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
+                                        {/*<a className={'cardLearnMore'} href={'#'}>Learn More</a>*/}
                                     </div>
                                 </div>
                             </Item>
@@ -89,7 +112,10 @@ function TarotGame() {
             </Grid>
             {
                 showReloadGame &&
-                <div className={'tryAgain'} onClick={() => drawCard()}>
+                <div className={`tryAgain ${allCardsFlipped() ? 'visible' : ''}`} onClick={() => {
+                    resetGame();
+                    setTimeout(() => drawCard(), 1000);
+                }}>
                     <u>Try Again?</u>
                 </div>
             }
