@@ -1,13 +1,23 @@
 import React, {useEffect, useRef} from 'react';
 import $ from 'jquery';
 import './Menu.css';
-import {Link, HashRouter as Router} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 function Menu() {
     const blobRef = useRef(null);
     const blobPathRef = useRef(null);
     const hamburgerRef = useRef(null);
     let menuExpanded = false;
+
+    const location = useLocation();
+    React.useEffect(() => {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Your code here
+            menuExpanded = false;
+            $('.menu-inner').parent().removeClass('expanded');
+        }
+    }, [location]);
+
 
     useEffect(() => {
         const height = window.innerHeight;
@@ -22,12 +32,17 @@ function Menu() {
             blobPath = $(blobPathRef.current),
             hamburger = $(hamburgerRef.current);
 
-        $(window).on('mousemove', (e) => {
-            x = e.pageX;
-            y = e.pageY;
+        $(window).on('mousemove touchmove', (e) => {
+            if (e.type === 'touchmove') {
+                x = e.originalEvent.touches[0].pageX;
+                y = e.originalEvent.touches[0].pageY;
+            } else {
+                x = e.pageX;
+                y = e.pageY;
+            }
         });
 
-        $('.hamburger, .menu-inner').on('mouseenter', function () {
+        $('.hamburger, .menu-inner').on('mouseenter click touchstart', function () {
             $(this).parent().addClass('expanded');
             menuExpanded = true;
         });
@@ -36,6 +51,13 @@ function Menu() {
             menuExpanded = false;
             $(this).parent().removeClass('expanded');
         });
+
+        // $('.hamburger').on('touchend', function () {
+        //     if (menuExpanded) {
+        //         menuExpanded = false;
+        //         $(this).parent().removeClass('expanded');
+        //     }
+        // });
 
         function easeOutExpo(currentIteration, startValue, changeInValue, totalIterations) {
             return changeInValue * (-Math.pow(2, -10 * currentIteration / totalIterations) + 1) + startValue;

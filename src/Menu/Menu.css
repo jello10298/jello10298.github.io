@@ -41,6 +41,8 @@
     width: 20px;
     height: 20px;
     margin-top: -10px;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .hamburger .line {
@@ -48,6 +50,7 @@
     height: 4px;
     background-color: #282c34;
     position: absolute;
+    pointer-events: none;
 }
 
 .hamburger .line:nth-child(2) {

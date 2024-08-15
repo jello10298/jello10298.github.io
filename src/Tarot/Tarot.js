@@ -102,7 +102,7 @@ function TarotGame() {
                                     <div className={`cardInfo ${isFlipped[index] ? 'flipped' : ''}`}>
                                         <h2 className={'cardName'}>{card.name}</h2>
                                         <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
-                                        {/*<a className={'cardLearnMore'} href={'#'}>Learn More</a>*/}
+                                        <a className={'cardLearnMore'} href={'#'}>Learn More</a>
                                     </div>
                                 </div>
                             </Item>
