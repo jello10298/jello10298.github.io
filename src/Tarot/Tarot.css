@@ -16,7 +16,7 @@
 .readingContainer.grid {
     margin: 16px auto 32px;
     width: auto;
-    max-width: 968px;
+    max-width: 1024px;
 }
 
 .gameName {
@@ -76,7 +76,7 @@
 
 .daliTarotCard img {
     height: 100%;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
 .cardInfo {
@@ -92,14 +92,22 @@
 
 .cardName {
     color: #fff;
+    margin-bottom: 16px;
 }
 
 .cardDesc {
-    text-align: justify;
+    text-align: left;
 }
 
 .cardLearnMore {
-    float: left;
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 0;
 }
 
 .tryAgain {
@@ -108,7 +116,7 @@
     min-width: 30px;
     min-height: 30px;
     position: relative;
-    margin: 0 auto 60px;
+    margin: 60px auto;
     cursor: pointer;
     text-align: center;
     width: auto;
@@ -123,4 +131,65 @@
 .tryAgain.visible {
     opacity: 1;
     pointer-events: all;
+}
+
+
+/*#modal*/
+.mymodal {
+    position: absolute;
+    top: 2%;
+    left: 25%;
+    right: 25%;
+    bottom: 2%;
+    border: 1px solid var(--menu-color);
+    background: var(--background-color);
+    overflow: auto;
+    --webkit-overflow-scrolling: touch;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    box-shadow: var(--menu-color) 0px 0px 0px 8px
+}
+
+.myoverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.modal-content {
+    display: flex;
+}
+
+.graphic-content {
+    width: 50%;
+}
+.graphic-content img {
+    border-radius: 25px;
+}
+
+.text-content {
+    width: 50%;
+    padding: 0 24px 24px 24px;
+}
+
+.text-content h2 {
+    margin-top: 0;
+}
+
+.text-content p {
+    /*color: var(--background-color);*/
+    margin-bottom: 16px;
+}
+
+.close-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
 }

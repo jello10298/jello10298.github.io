@@ -5,6 +5,12 @@ import './Tarot.css';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Grid} from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+import Modal from 'react-modal';
+import {Close} from "@mui/icons-material";
+Modal.setAppElement('#root');
 
 const Item = styled(Paper)(({theme}) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,6 +25,7 @@ function TarotGame() {
     const [cards, setCards] = useState([]);
     const [showReloadGame, setShowReloadGame] = useState(false);
     const [isFlipped, setIsFlipped] = useState([false, false, false]);
+    const [isOpen, setIsOpen] = useState([false, false, false]);
 
     const welcomeScreen = createRef();
 
@@ -64,6 +71,14 @@ function TarotGame() {
         setIsFlipped([false, false, false]);
     }
 
+    const toggleModal = (index) => {
+        setIsOpen((prevState) => {
+            const newState = [...prevState];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    }
+
     return (
         <>
             <div
@@ -102,8 +117,50 @@ function TarotGame() {
                                     <div className={`cardInfo ${isFlipped[index] ? 'flipped' : ''}`}>
                                         <h2 className={'cardName'}>{card.name}</h2>
                                         <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
-                                        <a className={'cardLearnMore'} href={'#'}>Learn More</a>
+                                        <a className={'cardLearnMore'} href={'#'} onClick={() => {
+                                            toggleModal(index)
+                                        }}>Learn More <ArrowForwardIosIcon fontSize={'small'}/></a>
                                     </div>
+
+                                    <Modal
+                                        isOpen={isOpen[index]}
+                                        onRequestClose={() => {
+                                            toggleModal(index)
+                                        }}
+                                        contentLabel="My dialog"
+                                        className="mymodal"
+                                        overlayClassName="myoverlay"
+                                        closeTimeoutMS={500}
+                                    >
+                                        <div className="modal-content">
+                                            <div className="graphic-content">
+                                                <img src={'dali/' + card.image} alt={card.name}
+                                                    style={{
+                                                        width: '100%',
+                                                    }}/>
+                                            </div>
+                                            <div className="text-content">
+                                                {card.name &&
+                                                    <h2>{card.name}</h2>
+                                                }
+                                                {card.longDesc &&
+                                                    <p><b>{card.title}</b><br/><div dangerouslySetInnerHTML={{ __html: card.longDesc }} /></p>
+                                                }
+
+                                                {card.desc &&
+                                                    <p><b>Practical Advice</b><br />{card.desc}</p>
+                                                }
+
+                                                {card.source &&
+                                                    <p><b>Pictorial Sources</b><br />{card.source}</p>
+                                                }
+
+                                                <div className="close-icon" onClick={() => {
+                                                    toggleModal(index)
+                                                }}><CloseIcon/></div>
+                                            </div>
+                                        </div>
+                                    </Modal>
                                 </div>
                             </Item>
                         </Grid>
