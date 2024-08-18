@@ -121,15 +121,15 @@ function Menu() {
                 <ul>
                     <li><Link to={'/'}>Home</Link></li>
                     {/*<li><a href={'/tarot'}>Tarot Game</a></li>*/}
+                    <li><Link to={'/portfolio'}>Portfolio</Link></li>
                     <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Resume</a></li>
                     <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}
                            rel={'noreferrer'}>Cirum
                         Vitae</a></li>
-                    <li><Link to={'/portfolio'}>Portfolio</Link></li>
                     <li><Link to={'/about'}>About</Link></li>
                     <li>
-                        <hr width={'80%'} className={'styled'} />
+                        <hr width={'80%'} className={'styled'}/>
                     </li>
                     <li>
                         <Link to={'/landscape-generator'}>Teraform</Link>
