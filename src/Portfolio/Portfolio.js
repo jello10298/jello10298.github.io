@@ -14,15 +14,70 @@ const AutoplaySlider = withAutoplay(AwesomeSlider);
 const slider = (
     <AutoplaySlider
         play={true}
-        cancelOnInteraction={false}
-        interval={6000}
+        // cancelOnInteraction={false}
+        interval={1000}
         animation={'cubeAnimation'}
         className="awesome-slider"
         fillParent={false}
     >
-        <div data-src="/portfolio/Hyatt/chiph.png"/>
-        <div data-src="/portfolio/Hyatt/grand-hyatt.png"/>
-        <div data-src="/portfolio/Hyatt/hyatt-regency.png"/>
+        <div data-src={'/portfolio/hyatt-brands.png'} />
+        <div data-src={'/portfolio/Hyatt/chiph.png'} />
+        <div data-src={'/portfolio/Hyatt/grand-hyatt.png'} />
+        <div data-src={'/portfolio/Hyatt/hyatt-regency.png'} />
+        <div data-src={'/portfolio/Hyatt/hyatt.png'} />
+        <div data-src={'/portfolio/Hyatt/keysh.png'} />
+        <div data-src={'/portfolio/Hyatt/hyatt-place.png'} />
+        <div data-src={'/portfolio/Hyatt/hyatt-house.png'} />
+        <div data-src={'/portfolio/Hyatt/hyatt-studios.png'} />
+        <div data-src={'/portfolio/Hyatt/urcove.png'} />
+        <div data-src={'/portfolio/Hyatt/miraval.png'} />
+        <div data-src={'/portfolio/Hyatt/alila.png'} />
+        <div data-src={'/portfolio/Hyatt/andaz.png'} />
+        <div data-src={'/portfolio/Hyatt/thompson.png'} />
+        <div data-src={'/portfolio/UHC.png'} />
+        <div data-src={'/portfolio/RallyHealth.png'} />
+        <div data-src={'/portfolio/Microsoft - Buy Box.png'} />
+        <div data-src={'/portfolio/Microsoft - Remote Install.png'} />
+        <div data-src={'/portfolio/HyattEvents.png'} />
+        <div data-src={'/portfolio/Lundbeck.png'} />
+        <div data-src={'/portfolio/Rolex.png'} />
+        <div data-src={'/portfolio/archive2/4.aim.jpg'} />
+        <div data-src={'/portfolio/archive2/3.v4l.jpg'} />
+        <div data-src={'/portfolio/archive2/1.wowvapor.jpg'} />
+        <div data-src={'/portfolio/archive2/2.wowvapor.jpg'} />
+        <div data-src={'/portfolio/archive2/5.microsoft.jpg'} />
+        <div data-src={'/portfolio/archive2/6.wheelworks.jpg'} />
+        <div data-src={'/portfolio/archive2/7.hibdon.jpg'} />
+        <div data-src={'/portfolio/dominos/1.unt.jpg'} />
+        <div data-src={'/portfolio/dominos/2.uconn.jpg'} />
+        <div data-src={'/portfolio/dominos/3.louisville.jpg'} />
+        <div data-src={'/portfolio/dominos/4.midland.jpg'} />
+        <div data-src={'/portfolio/dominos/5.charolette.jpg'} />
+        <div data-src={'/portfolio/dominos/6.mexico.jpg'} />
+        <div data-src={'/portfolio/dominos/7.winston-salem.jpg'} />
+        <div data-src={'/portfolio/dominos/8.carolinas.jpg'} />
+        <div data-src={'/portfolio/dominos/9.stlouis.jpg'} />
+        <div data-src={'/portfolio/dominos/10.ordermydominos.jpg'} />
+        <div data-src={'/portfolio/dominos/11.ucf.jpg'} />
+        <div data-src={'/portfolio/dominos/12.islavista.jpg'} />
+        <div data-src={'/portfolio/dominos/13.missouri.jpg'} />
+        <div data-src={'/portfolio/dominos/14.uncc.jpg'} />
+        <div data-src={'/portfolio/dominos/15.dallas.jpg'} />
+        <div data-src={'/portfolio/dominos/16.milehigh.jpg'} />
+        <div data-src={'/portfolio/dominos/17.chicago.jpg'} />
+        <div data-src={'/portfolio/dominos/18.milwaukee.jpg'} />
+        <div data-src={'/portfolio/archive2/8.halloween.jpg'} />
+        <div data-src={'/portfolio/archive1/2.nlb.jpg'} />
+        <div data-src={'/portfolio/archive1/3.dtdoggy.jpg'} />
+        <div data-src={'/portfolio/archive1/1.ama.jpg'} />
+        <div data-src={'/portfolio/Discover.png'} />
+        <div data-src={'/portfolio/IEEE - EMBS.png'} />
+        <div data-src={'/portfolio/iCAIR.png'} />
+        <div data-src={'/portfolio/InternationalVirtualInstitute.png'} />
+
+
+
+
     </AutoplaySlider>
 );
 
@@ -47,7 +102,7 @@ function Portfolio() {
                 <br/>
                 <br/>
                 <br/>
-                {/*{slider}*/}
+                {slider}
                 <br/>
                 <br/>
                 <br/>
