@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import $ from 'jquery';
 import './Menu.css';
-import {Link, useLocation} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 
 function Menu() {
     const blobRef = useRef(null);
@@ -51,13 +51,6 @@ function Menu() {
             menuExpanded = false;
             $(this).parent().removeClass('expanded');
         });
-
-        // $('.hamburger').on('touchend', function () {
-        //     if (menuExpanded) {
-        //         menuExpanded = false;
-        //         $(this).parent().removeClass('expanded');
-        //     }
-        // });
 
         function easeOutExpo(currentIteration, startValue, changeInValue, totalIterations) {
             return changeInValue * (-Math.pow(2, -10 * currentIteration / totalIterations) + 1) + startValue;
@@ -119,20 +112,21 @@ function Menu() {
 
             <div className="menu-inner">
                 <ul>
-                    <li><Link to={'/'}>Home</Link></li>
-                    {/*<li><a href={'/tarot'}>Tarot Game</a></li>*/}
-                    <li><Link to={'/portfolio'}>Portfolio</Link></li>
-                    <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'} target={'_blank'}
+                    <li><NavLink to={'/'}>Dali Tarot</NavLink></li>
+                    <li><NavLink to={'/portfolio'}>Portfolio</NavLink></li>
+                    <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'}
+                           target={'_blank'}
                            rel={'noreferrer'}>Resume</a></li>
-                    <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'} target={'_blank'}
+                    <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'}
+                           target={'_blank'}
                            rel={'noreferrer'}>Cirum
                         Vitae</a></li>
-                    <li><Link to={'/about'}>About</Link></li>
+                    <li><NavLink to={'/about'}>About</NavLink></li>
                     <li>
                         <hr width={'80%'} className={'styled'}/>
                     </li>
                     <li>
-                        <Link to={'/landscape-generator'}>Teraform</Link>
+                        <NavLink to={'/landscape-generator'}>Teraform</NavLink>
                     </li>
                     {/*<li>*/}
                     {/*    <Link to={'/nes-emulator'}>NES Emulator</Link>*/}

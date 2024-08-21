@@ -73,7 +73,6 @@ ul {
 
 ul li {
     color: #282c34;
-    font-family: sans-serif;
     padding: 20px 0;
 }
 
@@ -99,8 +98,13 @@ ul li hr.styled:before { /* Not really supposed to work, but does */
     border-radius: 20px;
 }
 
-a {
+ul li a {
     color: #282c34;
+    text-decoration: none;
+}
+
+ul li a.active {
+    font-weight: bold;
 }
 
 .linkedInLogo {
