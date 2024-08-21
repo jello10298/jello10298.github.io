@@ -9,7 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import Modal from 'react-modal';
-import {Close} from "@mui/icons-material";
+import ScrollDown from "../ScrollDown/ScrollDown";
 Modal.setAppElement('#root');
 
 const Item = styled(Paper)(({theme}) => ({
@@ -117,9 +117,12 @@ function TarotGame() {
                                     <div className={`cardInfo ${isFlipped[index] ? 'flipped' : ''}`}>
                                         <h2 className={'cardName'}>{card.name}</h2>
                                         <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
-                                        <a className={'cardLearnMore'} href={'#'} onClick={() => {
-                                            toggleModal(index)
-                                        }}>Learn More <ArrowForwardIosIcon fontSize={'small'}/></a>
+                                        <button className={'cardLearnMore'}
+                                                onClick={() => {
+                                                    toggleModal(index)
+                                                }}>
+                                            Learn More <ArrowForwardIosIcon fontSize={'small'}/>
+                                        </button>
                                     </div>
 
                                     <Modal
@@ -144,7 +147,7 @@ function TarotGame() {
                                                     <h2>{card.name}</h2>
                                                 }
                                                 {card.longDesc &&
-                                                    <p><b>{card.title}</b><br/><div dangerouslySetInnerHTML={{ __html: card.longDesc }} /></p>
+                                                    <p><b>{card.title}</b><br/><span dangerouslySetInnerHTML={{ __html: card.longDesc }} /></p>
                                                 }
 
                                                 {card.desc &&
@@ -176,6 +179,7 @@ function TarotGame() {
                     <u>Try Again?</u>
                 </div>
             }
+            <ScrollDown />
         </>
     )
 }

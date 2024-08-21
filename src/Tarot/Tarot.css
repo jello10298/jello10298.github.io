@@ -121,6 +121,10 @@
     justify-content: center;
     text-decoration: none;
     margin-top: 0;
+    background-color: transparent;
+    color: var(--menu-color);
+    border: none;
+    text-transform: uppercase;
 }
 
 @media (max-width: 968px) {
