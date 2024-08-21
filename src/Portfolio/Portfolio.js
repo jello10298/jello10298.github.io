@@ -3,12 +3,8 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import {withNavigationHandlers} from "react-awesome-slider/dist/navigation";
 import {Gallery} from "react-grid-gallery";
 import {tilesData} from "./tilesData";
-import {Tile} from "./Tile";
-
-const Slider = withNavigationHandlers(AwesomeSlider);
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const slider = (
@@ -107,85 +103,6 @@ function Portfolio() {
                 <br/>
                 <br/>
 
-                {/*<div>*/}
-                {/*    <h2>Links</h2>*/}
-                {/*    <ul style={{position: 'static'}}>*/}
-                {/*        <li>*/}
-                {/*            <a href={'/'} target={'_blank'}>*/}
-                {/*                04/17-04/24 Hyatt*/}
-                {/*            </a><br/>*/}
-                {/*            <p>*/}
-                {/*                As a Full Stack AEM Consultant at Hyatt, I oversaw the development of a comprehensive*/}
-                {/*                system*/}
-                {/*                from scratch, reimagining and implementing over 1,600 websites across 20 brands and 10*/}
-                {/*                languages. This involved designing templates, migrating data from a legacy AEM system,*/}
-                {/*                and*/}
-                {/*                orchestrating frontend and backend development which lead to Atlas, a GraphQL API*/}
-                {/*                integrated*/}
-                {/*                into over 20 teams, streamlining data access for property-specific information. I*/}
-                {/*                spearheaded*/}
-                {/*                the migration of the frontend to React/NextJS, enhancing user experience and*/}
-                {/*                significantly*/}
-                {/*                contributing to Hyatt's digital presence and operational efficiency.*/}
-                {/*            </p>*/}
-                {/*            <Tile name={"Hyatt Brands"} image={'/portfolio/hyatt-brands.png'}/>*/}
-
-                {/*            <h3>Timeless Collection</h3>*/}
-                {/*            <Tile name={"Park Hyatt"} image={'/portfolio/Hyatt/chiph.png'}/>*/}
-                {/*            <Tile name={"Grand Hyatt"} image={'/portfolio/Hyatt/grand-hyatt.png'}/>*/}
-                {/*            <Tile name={"Hyatt Regency"} image={'/portfolio/Hyatt/hyatt-regency.png'}/>*/}
-                {/*            <Tile name={"Hyatt"} image={'/portfolio/Hyatt/hyatt.png'}/>*/}
-                {/*            <Tile name={"Hyatt Vacation Club"} image={'/portfolio/Hyatt/keysh.png'}/>*/}
-                {/*            <Tile name={"Hyatt Place"} image={'/portfolio/Hyatt/hyatt-place.png'}/>*/}
-                {/*            <Tile name={"Hyatt House"} image={'/portfolio/Hyatt/hyatt-house.png'}/>*/}
-                {/*            <Tile name={"Hyatt Studios"} image={'/portfolio/Hyatt/hyatt-studios.png'}/>*/}
-                {/*            <Tile name={"UrCove"} image={'/portfolio/Hyatt/urcove.png'}/>*/}
-
-                {/*            <h3>Boundless Collection</h3>*/}
-                {/*            <Tile name={"Miraval"} image={'/portfolio/Hyatt/miraval.png'}/>*/}
-                {/*            <Tile name={"Alila"} image={'/portfolio/Hyatt/alila.png'}/>*/}
-                {/*            <Tile name={"Andaz"} image={'/portfolio/Hyatt/andaz.png'}/>*/}
-                {/*            <Tile name={"Thompson"} image={'/portfolio/Hyatt/thompson.png'}/>*/}
-
-                {/*            <p>and many many more for the brands:</p>*/}
-                {/*            /!*<Tile name={"Dream"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Hyatt Centric"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Caption by Hyatt"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-
-                {/*            <h3>Independent Collection</h3>*/}
-                {/*            <p>Unbound</p>*/}
-                {/*            <p>Destination by Hyatt</p>*/}
-                {/*            <p>JDV</p>*/}
-                {/*            /!*<Tile name={"Unbound"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Destination by Hyatt"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"JDV"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-
-                {/*            <h3>Inclusive Collection</h3>*/}
-                {/*            <p>Impression</p>*/}
-                {/*            <p>Ziva</p>*/}
-                {/*            <p>Zilara</p>*/}
-                {/*            <p>Zoetry</p>*/}
-                {/*            <p>Secrets</p>*/}
-                {/*            <p>Breathless</p>*/}
-                {/*            <p>Dreams</p>*/}
-                {/*            <p>Hyatt Vivid</p>*/}
-                {/*            <p>Alua</p>*/}
-                {/*            <p>Sunscape</p>*/}
-
-                {/*            /!*<Tile name={"Impression"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Ziva"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Zilara"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Zoetry"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Secrets"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Breathless"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Dreams"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Hyatt Vivid"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Alua"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*            /!*<Tile name={"Sunscape"} image={'/portfolio/Hyatt/Logos/Hyatt.png'}/>*!/*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <a href={'/'} target={'_blank'}>*/}
-                {/*                06/20-06/24 UHG / Optum / Rally*/}
                 {/*            </a><br/>*/}
                 {/*            <p>*/}
                 {/*                • Managed, maintained and performance optimized legacy healthcare related software*/}

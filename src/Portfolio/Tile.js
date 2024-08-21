@@ -7,7 +7,8 @@ export const Tile = ({name, image, waybackLink}) => {
                             </a><br/>
             {waybackLink &&
                 <a href={waybackLink}
-                   target={'_blank'}>
+                   target={'_blank'}
+                    rel={'noreferrer'}>
                     Wayback Machine
                 </a>
             }
