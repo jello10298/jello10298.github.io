@@ -146,6 +146,7 @@ function TarotGame() {
                                                 {card.name &&
                                                     <h2>{card.name}</h2>
                                                 }
+
                                                 {card.longDesc &&
                                                     <p><b>{card.title}</b><br/><span dangerouslySetInnerHTML={{ __html: card.longDesc }} /></p>
                                                 }

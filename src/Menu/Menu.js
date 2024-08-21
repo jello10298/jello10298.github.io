@@ -140,7 +140,7 @@ function Menu() {
                 </ul>
                 <a href={'https://www.linkedin.com/in/angelogonzalez1/'} target={'_blank'}
                    className={'linkedInLogo'}>
-                    <img src={'LinkedIn_Logo.svg'}/> <br/>
+                    <img src={'LinkedIn_Logo.svg'} alt={"Angelo Gonzalez's LinkedIn Page"}/> <br/>
                     {/*<blockquote>*/}
                     {/*“Imitation is the sincerest form of flattery that mediocrity can pay to greatness”*/}
                     {/*</blockquote>*/}

@@ -91,9 +91,23 @@
     opacity: 0;
 }
 
+@media (max-width: 968px) {
+    .cardInfo {
+        transform: none;
+        transition: margin-top 0.8s, opacity 0.8s;
+        margin-top: -160px;
+    }
+}
+
 .cardInfo.flipped {
     transform: translateY(0);
     opacity: 1;
+}
+
+@media (max-width: 968px) {
+    .cardInfo.flipped {
+        margin-top: 0;
+    }
 }
 
 .cardName {
@@ -114,7 +128,7 @@
 
 .cardLearnMore {
     position: absolute;
-    bottom: -24px;
+    bottom: -36px;
     left: 0;
     display: flex;
     align-items: center;
@@ -125,6 +139,7 @@
     color: var(--menu-color);
     border: none;
     text-transform: uppercase;
+    padding: 0;
 }
 
 @media (max-width: 968px) {
