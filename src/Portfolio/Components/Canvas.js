@@ -3,11 +3,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
-import Controls from './Controls';
-import Loading from './Loading';
-import {GLTFExporter} from "three/examples/jsm/exporters/GLTFExporter";
 
 let light = new THREE.PointLight(0xFFFFFF, 0.8, 0, 2);
 light.position.set(300, 100, 0);
