@@ -102,6 +102,22 @@ function Menu() {
         window.requestAnimationFrame(svgCurve);
     }, []);
 
+    const handleResumeClick = () => {
+        gtag !== undefined && gtag('event', 'download_resume', {
+            event_category: 'engagement',
+            event_label: 'Download Resume',
+            value: 1
+        });
+    };
+
+    const handleCVResumeClick = () => {
+        gtag !== undefined && gtag('event', 'download_resume', {
+            event_category: 'engagement',
+            event_label: 'Download Resume',
+            value: 1
+        });
+    };
+
     return (
         <div id="menu">
             <div className="hamburger" ref={hamburgerRef}>
@@ -116,10 +132,13 @@ function Menu() {
                     <li><NavLink to={'/portfolio'}>Portfolio</NavLink></li>
                     <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'}
                            target={'_blank'}
-                           rel={'noreferrer'}>Resume</a></li>
+                           rel={'noopener noreferrer'}
+                           onClick={handleResumeClick}>
+                    Resume</a></li>
                     <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'}
                            target={'_blank'}
-                           rel={'noreferrer'}>Cirum
+                           rel={'noopener noreferrer'}
+                            onClick={handleCVResumeClick}>Cirum
                         Vitae</a></li>
                     <li><NavLink to={'/about'}>About</NavLink></li>
                     <li>

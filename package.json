@@ -36,7 +36,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "globals": {
+      "gtag": "writable"
+    }
   },
   "browserslist": {
     "production": [

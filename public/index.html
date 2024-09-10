@@ -11,11 +11,11 @@
     />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3QFZH67KS"></script>
     <script>
-      if (window.location.href.indexOf('localhost') !== 0) {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-W3QFZH67KS');
+      if (window.location.href.indexOf('localhost') !== 0) {
+        gtag('config', 'G-W3QFZH67KS');
       }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

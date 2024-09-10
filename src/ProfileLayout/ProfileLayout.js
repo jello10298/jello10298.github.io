@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ProfileLayout.css";
 import { Link } from "react-router-dom";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import {AppBar, Tabs, Tab, Box, Typography, styled} from "@mui/material";
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
@@ -44,6 +44,14 @@ const ProfileLayout = () => {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+    };
+
+    const handleResumeClick = () => {
+        gtag !== undefined && gtag('event', 'download_resume', {
+            event_category: 'engagement',
+            event_label: 'Download Resume',
+            value: 1
+        });
     };
 
     return (
@@ -106,10 +114,15 @@ const ProfileLayout = () => {
                     <p>Email: <a href={'mailto: angelogonzalez@outlook.com'}>angelogonzalez at[😉] outlook.com</a></p>
                     <p>Role: Software Developer / Change Agent</p>
                     <p>Phone: <a href={'tel:+13123076448'}>+1 (312) 307-6448</a></p>
-                    <button className="button download-button">
+                    <a
+                        href='/resume/Angelo Gonzalez - One Page.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
                         Download Resume &nbsp;
                         <PictureAsPdfIcon/>
-                    </button>
+                    </a>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                     <h2>Personal</h2>
@@ -151,10 +164,15 @@ const ProfileLayout = () => {
                     <p>Email: <a href={'mailto: jello10298@gmail.com'}>jello10298 at[😉] gmail.com</a></p>
                     <p>Role: Father / Husband</p>
                     <p>Phone: <a href={'tel:+13123076448'}>+1 (312) 307-6448</a></p>
-                    <button className="button download-button">
-                        Download Resume &nbsp;
-                        <PictureAsPdfIcon/>
-                    </button>
+                        <a
+                            href='/resume/Angelo Gonzalez - One Page.pdf'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className="button download-button resume-button"
+                            onClick={handleResumeClick}>
+                            Download Resume &nbsp;
+                            <PictureAsPdfIcon/>
+                        </a>
                 </TabPanel>
             </div>
             <div className="right-panel">
@@ -163,7 +181,11 @@ const ProfileLayout = () => {
                     src='/Firefly-Dali-inspired-image-of-the-magician-tarot-card-that-contains-a-transparent-Augusta-window-in.png'
                     alt="Profile"/>
                 <p>We all have natural talents, discover yours.</p>
-                <Link to={'/tarot'}>Play Now</Link>
+                {/*<Link to={'/tarot'} className={'button'}>Play Now</Link>*/}
+                <Link to={'/tarot'} className="button download-button play-button" style={{textDecoration: 'none'}}>
+                    Play Dali Tarot Now&nbsp;
+                    <RocketLaunchIcon/>
+                </Link>
             </div>
         </div>
     );

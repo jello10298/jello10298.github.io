@@ -6,8 +6,15 @@
   flex-direction: row-reverse;
   padding: 20px;
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 1980px;
 }
+
+@media (max-width: 1024px) {
+  .profile-container {
+    flex-direction: column;
+  }
+}
+
 
 .left-panel {
   flex: 1;
@@ -29,10 +36,10 @@
 }
 
 .button.download-button {
-  display: flex;
 }
+
 .download-button {
-  display: inline-block;
+  display: inline-flex;
   padding: 10px 20px;
   margin-top: 20px;
   font-size: 16px;
@@ -41,14 +48,26 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .download-button:hover {
-  background-color: #0056b3;
+  background-color: var(--menu-color);
   transform: scale(1.1);
+  color: black;
 }
 
 .download-button:active {
-  background-color: #004085;
+  background-color: var(--menu-color);
   transform: scale(1);
+  color: black;
+}
+
+.play-button {
+  text-decoration: none;
+}
+
+.play-button:hover {
+  background-color: var(--menu-color);
+  color: black;
 }
