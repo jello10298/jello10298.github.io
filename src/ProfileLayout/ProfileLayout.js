@@ -10,14 +10,14 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
     backgroundColor: 'transparent',
 }));
 
-const CustomTab = styled(Tab)(({ theme }) => ({
+const CustomTab = styled(Tab)(({ }) => ({
     color: 'white',
     '&.Mui-selected': {
         color: 'var(--menu-color)',
     }
 }));
 
-const CustomTabs = styled(Tabs)(({ theme }) => ({
+const CustomTabs = styled(Tabs)(({ }) => ({
     '& .MuiTabs-indicator': {
         backgroundColor: 'var(--menu-color)',
     },
