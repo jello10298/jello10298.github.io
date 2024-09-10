@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import ChangeTitleOnRouteChange from "../ChangeTitleOnRouteChange/ChangeTitleOnRouteChange";
 import {routeData} from "./routeData";
+import ColorPalette from "../ColorPalette/ColorPalette";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         }
                     </Routes>
                 </div>
+                <ColorPalette />
             </Router>
         </div>
 );
