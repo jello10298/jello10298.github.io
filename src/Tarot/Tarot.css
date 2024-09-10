@@ -11,12 +11,51 @@
     left: 60px;
     height: 100vh;
     width: calc(100vw - 60px);
+    cursor: pointer;
 }
 
 .readingContainer.grid {
     margin: 16px auto 32px;
     width: auto;
     max-width: 1024px;
+}
+
+.tarot-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+    .tarot-container {
+        flex-direction: column;
+    }
+}
+
+.tarot-container .tarot-card {
+    position: static;
+}
+
+.tarot-item {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    color: white;
+    font-size: 1.2em;
+    flex-direction: column;
+}
+
+@media (max-width: 960px) {
+    .tarot-item {
+        width: auto;
+        margin: 30px;
+    }
 }
 
 .gameName {
@@ -30,6 +69,7 @@
     font-size: 48px;
     margin: 12px;
     color: #717070;
+    width: 100%;
 }
 
 .cardBackground.white {
@@ -40,20 +80,12 @@
 .daliTarotCard {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 40vw;
     transform-style: preserve-3d;
     transition: all 0.8s;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     z-index: 1;
+    min-height: 40vh;
 }
-
-@media (min-width: 1280px) {
-    .daliTarotCard {
-        min-height: 30vw;
-    }
-}
-
 
 .daliTarotCard.flipped {
     transform: rotateY(180deg);
@@ -86,9 +118,17 @@
 }
 
 .cardInfo {
+    opacity: 0;
+}
+
+.cardInfo.flipped {
+    opacity: 1;
+}
+
+.tarot-container .cardInfo {
     transform: translateY(calc(-100% - 36px));
     transition: transform 0.8s, opacity 0.8s;
-    opacity: 0;
+    display: block;
 }
 
 @media (max-width: 968px) {
@@ -99,9 +139,9 @@
     }
 }
 
-.cardInfo.flipped {
+.tarot-container .cardInfo.flipped {
     transform: translateY(0);
-    opacity: 1;
+    display: block;
 }
 
 @media (max-width: 968px) {
@@ -119,6 +159,12 @@
     text-align: left;
 }
 
+@media (min-width: 969px) {
+    .cardDesc {
+        max-width: 25vw;
+    }
+}
+
 @media (max-width: 968px) {
     .cardDesc {
         margin-right: 10px;
@@ -127,7 +173,8 @@
 }
 
 .cardLearnMore {
-    position: absolute;
+    cursor: pointer;
+    /*position: absolute;*/
     bottom: -36px;
     left: 0;
     display: flex;
@@ -149,7 +196,7 @@
     }
 }
 
-.tryAgain {
+.try-again, .show-all-cards {
     background-color: var(--menu-color);
     color: var(--background-color);
     min-width: 30px;
@@ -165,11 +212,17 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.8s;
+    text-decoration: none;
 }
 
-.tryAgain.visible {
+.show-all-cards.visible,
+.try-again.visible {
     opacity: 1;
     pointer-events: all;
+}
+
+.show-all-cards {
+    margin-right: 20px;
 }
 
 
@@ -177,8 +230,8 @@
 .mymodal {
     position: absolute;
     top: 2%;
-    left: 25%;
-    right: 25%;
+    left: 16%;
+    right: 16%;
     bottom: 2%;
     border: 1px solid var(--menu-color);
     background: var(--background-color);
@@ -187,7 +240,7 @@
     border-radius: 4px;
     outline: none;
     padding: 20px;
-    box-shadow: var(--menu-color) 0px 0px 0px 8px
+    box-shadow: var(--menu-color) 0 0 0 8px
 }
 
 @media (max-width: 968px) {

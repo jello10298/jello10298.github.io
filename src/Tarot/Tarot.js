@@ -1,49 +1,28 @@
 import React, {createRef, useState} from 'react';
-import tarotData from './data';
 import './Tarot.css';
-
-import {styled} from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import {Grid} from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 import Modal from 'react-modal';
-import ScrollDown from "../ScrollDown/ScrollDown";
+import TarotDeck from "../TarotDeck/TarotDeck";
+import {useTarotGameLogic} from "../TarotGameLogicContext/TarotGameLogicContext";
+import TarotCard from "../TarotCard/TarotCard";
+
 Modal.setAppElement('#root');
 
-const Item = styled(Paper)(({theme}) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
 function TarotGame() {
-
-    const [cards, setCards] = useState([]);
-    const [showReloadGame, setShowReloadGame] = useState(false);
-    const [isFlipped, setIsFlipped] = useState([false, false, false]);
-    const [isOpen, setIsOpen] = useState([false, false, false]);
+    const {
+        deck,
+        drawThreeCards,
+        currentThreeCards,
+        resetGame,
+        revealAllCards,
+        hideAllCards
+    } = useTarotGameLogic();
 
     const welcomeScreen = createRef();
 
-    const drawCard = () => {
-        const drawnCards = [];
-        while (drawnCards.length < 3) {
-            const index = Math.floor(Math.random() * tarotData.length);
-            if (!drawnCards.find(card => card === tarotData[index])) {
-                drawnCards.push(tarotData[index]);
-            }
-        }
-        const yourPresent = drawnCards[0];
-        const yourPast = drawnCards[1];
-        const yourFuture = drawnCards[2];
-        setCards([yourPast, yourPresent, yourFuture]);
-
-        setShowReloadGame(true);
-    };
+    const [showAllCardsText, setShowAllCardsText] = useState(false);
+    const [showDeck, setShowDeck] = useState(false);
+    const [isDeckExpanded, setDeckExpanded] = useState(true);
+    const [isLocalCardFlipped, setIsLocalCardFlipped] = useState([false, false, false]);
 
     const hideWelcome = () => {
         if (welcomeScreen.current !== null) {
@@ -55,132 +34,88 @@ function TarotGame() {
         return false;
     }
 
-    const flipCard = (index) => {
-        setIsFlipped(prevState => {
-            const newState = [...prevState];
-            newState[index] = !newState[index];
-            return newState;
+    const resetDeck = () => {
+        hideAllCards(10, () => {
+            setShowAllCardsText(false);
+            setDeckExpanded(false);
         });
-    }
-
-    const allCardsFlipped = () => {
-        return isFlipped.every(value => value === true);
-    }
-
-    const resetGame = () => {
-        setIsFlipped([false, false, false]);
-    }
-
-    const toggleModal = (index) => {
-        setIsOpen((prevState) => {
-            const newState = [...prevState];
-            newState[index] = !newState[index];
-            return newState;
-        });
-    }
+    };
 
     return (
         <>
+
             <div
-                className="welcome"
+                className='welcome'
                 ref={welcomeScreen}
-                onClick={() => { hideWelcome() && drawCard() }}/>
+                onClick={() => {
+                    hideWelcome() && drawThreeCards()
+                }}/>
 
-            <Grid container className={'readingContainer grid'}>
+            <div className={'tarot-container'}>
                 {
-                    cards.map((card, index) =>
-                        <Grid item md={4} key={index}>
-                            <Item className={"cardBackground white"}>
-                                <div className="card">
-                                    <h2 className={'alex-brush-regular tarotHeading'}>
-                                        {
-                                            function () {
-                                                switch (index) {
-                                                    case 0:
-                                                        return 'Your Past';
-                                                    case 1:
-                                                        return 'Your Present';
-                                                    case 2:
-                                                        return 'Your Future';
-                                                    default:
-                                                        return null;
-                                                }
-                                            }()
+                    currentThreeCards.map((card, index) =>
+                        <div className={'tarot-item cardBackground'} key={index}>
+                            <h2 className={'alex-brush-regular tarotHeading'}>
+                                {
+                                    function () {
+                                        switch (index) {
+                                            case 0:
+                                                return 'Past';
+                                            case 1:
+                                                return 'Present';
+                                            case 2:
+                                                return 'Future';
+                                            default:
+                                                return null;
                                         }
-                                    </h2>
-                                    <div className={`daliTarotCard ${isFlipped[index] ? 'flipped' : ''}`} onClick={() => {
-                                        flipCard(index);
-                                    }}>
-                                        <img src={'dali/' + card.image} alt={card.name} className={'daliTarotCardFront'}/>
-                                        <img src={'dali/card-back.jpg'} alt={card.name} className={'daliTarotCardBack'} />
-                                    </div>
-                                    <div className={`cardInfo ${isFlipped[index] ? 'flipped' : ''}`}>
-                                        <h2 className={'cardName'}>{card.name}</h2>
-                                        <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
-                                        <button className={'cardLearnMore'}
-                                                onClick={() => {
-                                                    toggleModal(index)
-                                                }}>
-                                            Learn More <ArrowForwardIosIcon fontSize={'small'}/>
-                                        </button>
-                                    </div>
-
-                                    <Modal
-                                        isOpen={isOpen[index]}
-                                        onRequestClose={() => {
-                                            toggleModal(index)
-                                        }}
-                                        contentLabel="My dialog"
-                                        className="mymodal"
-                                        overlayClassName="myoverlay"
-                                        closeTimeoutMS={500}
-                                    >
-                                        <div className="modal-content">
-                                            <div className="graphic-content">
-                                                <img src={'dali/' + card.image} alt={card.name}
-                                                    style={{
-                                                        width: '100%',
-                                                    }}/>
-                                            </div>
-                                            <div className="text-content">
-                                                {card.name &&
-                                                    <h2>{card.name}</h2>
-                                                }
-
-                                                {card.longDesc &&
-                                                    <p><b>{card.title}</b><br/><span dangerouslySetInnerHTML={{ __html: card.longDesc }} /></p>
-                                                }
-
-                                                {card.desc &&
-                                                    <p><b>Practical Advice</b><br />{card.desc}</p>
-                                                }
-
-                                                {card.source &&
-                                                    <p><b>Pictorial Sources</b><br />{card.source}</p>
-                                                }
-
-                                                <div className="close-icon" onClick={() => {
-                                                    toggleModal(index)
-                                                }}><CloseIcon/></div>
-                                            </div>
-                                        </div>
-                                    </Modal>
-                                </div>
-                            </Item>
-                        </Grid>
+                                    }()
+                                }
+                            </h2>
+                            <TarotCard card={card} isFlipped={isLocalCardFlipped[index]} isFlippedCallback={() => {
+                                const newIsFlipped = [...isLocalCardFlipped];
+                                newIsFlipped[index] = !newIsFlipped[index];
+                                setIsLocalCardFlipped(newIsFlipped);
+                            }} key={index + 10000} gameCard={true} />
+                        </div>
                     )
                 }
-            </Grid>
+            </div>
+
+            <div className={`show-all-cards ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
+                if (showAllCardsText === false) {
+                    const delay = 200;
+                    setShowDeck(true);
+                    setDeckExpanded(true);
+                    revealAllCards(delay);
+                    setTimeout(() => {
+                        setShowAllCardsText(true);
+                    }, deck.length * delay);
+                } else {
+                    // hideAllCards(100, () => {
+                    //     setShowAllCards(false);
+                    // });
+                    resetDeck();
+                }
+            }}>
+                {showAllCardsText ? 'Hide' : 'Show'} All Cards
+            </div>
+
             {
-                showReloadGame &&
-                <div className={`tryAgain ${allCardsFlipped() ? 'visible' : ''}`} onClick={() => {
+                // currentThreeCards &&
+                // countFlippedCards() >= 3 &&
+                isLocalCardFlipped.filter(value => value).length === isLocalCardFlipped.length &&
+                <div className={`try-again ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
                     resetGame();
-                    setTimeout(() => drawCard(), 1000);
+                    resetDeck();
+                    drawThreeCards();
+                    // setTimeout(() => drawThreeCards(), 1000);
                 }}>
-                    <u>Try Again?</u>
+                    Try Again
                 </div>
             }
-            <ScrollDown />
+
+            {showDeck && <TarotDeck expanded={isDeckExpanded} className={`${!isDeckExpanded ? 'corner' : ''}`}/>}
+
         </>
     )
 }

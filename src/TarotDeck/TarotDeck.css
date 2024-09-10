@@ -1,0 +1,47 @@
+.tarot-deck {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 80vh;
+}
+
+.tarot-deck.expanded {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.tarot-deck.corner {
+    right: -43%;
+    position: relative;
+    bottom: 220px;
+    transform: scale(0.5);
+}
+
+.tarot-deck.expanded .tarot-card {
+    margin: 20px;
+    position: static;
+}
+
+.tarot-deck .tarot-card {
+    min-width: 370px;
+}
+
+.tarot-deck .tarot-card:nth-child(2n + 1) {
+    margin-top: 4px;
+    margin-left: 4px;
+}
+.tarot-deck .tarot-card:nth-child(3n + 1) {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+
+.tarot-deck img {
+    border: 1px solid #686161;
+}
+
+.tarot-card {
+    position: absolute;
+}

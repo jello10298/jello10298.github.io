@@ -3,11 +3,15 @@ import Home from "../Home/Home";
 import Portfolio from "../Portfolio/Portfolio";
 import DiamondSquare from "../Portfolio/Components/DiamondSquare";
 import React from "react";
+import {TarotGameLogicProvider} from "../TarotGameLogicContext/TarotGameLogicContext";
+import tarotData from "../Tarot/data";
 
 export const routeData = [
     {
         path: '/',
-        element: <TarotGame/>,
+        element: <TarotGameLogicProvider cards={tarotData}>
+            <TarotGame/>
+        </TarotGameLogicProvider>,
         title: 'Home',
     },
     {
@@ -22,7 +26,9 @@ export const routeData = [
     },
     {
         path: '/tarot',
-        element: <TarotGame/>,
+        element: <TarotGameLogicProvider cards={tarotData}>
+            <TarotGame/>
+        </TarotGameLogicProvider>,
         title: 'Dali-inspired Tarot Game',
     },
     {
