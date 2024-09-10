@@ -70,7 +70,16 @@ const ColorPalette = () => {
                 />
             ))}
             {isModified && (
-                <Button variant="contained" color="secondary" onClick={resetColors}>
+                <Button
+                    variant="contained"
+                    sx={{
+                        backgroundColor: 'var(--menu-color)',
+                        ':hover': {
+                            backgroundColor: 'var(--menu-color)', // Same color on hover for simplicity
+                        }
+                    }}
+                    onClick={resetColors}
+                >
                     Reset Colors
                 </Button>
             )}
