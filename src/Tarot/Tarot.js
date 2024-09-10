@@ -81,7 +81,7 @@ function TarotGame() {
                 }
             </div>
 
-            <div className={`show-all-cards ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
+            <button className={`button show-all-cards ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
                 if (showAllCardsText === false) {
                     const delay = 200;
                     setShowDeck(true);
@@ -98,20 +98,20 @@ function TarotGame() {
                 }
             }}>
                 {showAllCardsText ? 'Hide' : 'Show'} All Cards
-            </div>
+            </button>
 
             {
                 // currentThreeCards &&
                 // countFlippedCards() >= 3 &&
                 isLocalCardFlipped.filter(value => value).length === isLocalCardFlipped.length &&
-                <div className={`try-again ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
+                <button className={`button ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
                     resetGame();
                     resetDeck();
                     drawThreeCards();
                     // setTimeout(() => drawThreeCards(), 1000);
                 }}>
                     Try Again
-                </div>
+                </button>
             }
 
             {showDeck && <TarotDeck expanded={isDeckExpanded} className={`${!isDeckExpanded ? 'corner' : ''}`}/>}

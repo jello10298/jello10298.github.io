@@ -22,7 +22,7 @@ const TarotCard = ({card, isFlippable = true, isFlipped = false, gameCard = fals
             <div className={`cardInfo ${gameCard && isFlipped ? 'flipped' : ''} ${!gameCard && isCardFlipped(card) ? 'flipped' : ''}`}>
                 <h2 className={'cardName'}>{card.name}</h2>
                 <p className={'cardDesc'}><b>{card.title}</b> - {card.desc}</p>
-                <button className={'cardLearnMore'}
+                <button className={'button cardLearnMore'}
                         onClick={() => {
                             toggleModal(card)
                         }}>

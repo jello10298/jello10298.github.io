@@ -84,7 +84,7 @@
     transition: all 0.8s;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     z-index: 1;
-    min-height: 40vh;
+    min-height: 42vh;
 }
 
 .daliTarotCard.flipped {
@@ -107,7 +107,8 @@
 }
 
 .daliTarotCard img {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 15px;
 }
 
@@ -175,7 +176,7 @@
 .cardLearnMore {
     cursor: pointer;
     /*position: absolute;*/
-    bottom: -36px;
+    /*bottom: -36px;*/
     left: 0;
     display: flex;
     align-items: center;
@@ -196,7 +197,7 @@
     }
 }
 
-.try-again, .show-all-cards {
+button.button {
     background-color: var(--menu-color);
     color: var(--background-color);
     min-width: 30px;
@@ -206,22 +207,17 @@
     cursor: pointer;
     text-align: center;
     width: auto;
-    display: inline-block;
     padding: 20px 30px;
     border-radius: 15px;
-    opacity: 0;
-    pointer-events: none;
     transition: opacity 0.8s;
     text-decoration: none;
 }
 
-.show-all-cards.visible,
-.try-again.visible {
+button.button.visible {
     opacity: 1;
-    pointer-events: all;
 }
 
-.show-all-cards {
+button.button.show-all-cards {
     margin-right: 20px;
 }
 
@@ -240,7 +236,7 @@
     border-radius: 4px;
     outline: none;
     padding: 20px;
-    box-shadow: var(--menu-color) 0 0 0 8px
+    box-shadow: #fed05738 0 0 12px 15px
 }
 
 @media (max-width: 968px) {
