@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./ProfileLayout.css";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import {AppBar, Tabs, Tab, Box, Typography, styled} from "@mui/material";
 
-const CustomAppBar = styled(AppBar)(({ theme }) => ({
+const CustomAppBar = styled(AppBar)(({theme}) => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
     backgroundColor: 'transparent',
 }));
 
-const CustomTab = styled(Tab)(({ }) => ({
+const CustomTab = styled(Tab)(({}) => ({
     color: 'white',
     '&.Mui-selected': {
         color: 'var(--menu-color)',
     }
 }));
 
-const CustomTabs = styled(Tabs)(({ }) => ({
+const CustomTabs = styled(Tabs)(({}) => ({
     '& .MuiTabs-indicator': {
         backgroundColor: 'var(--menu-color)',
     },
 }));
 
 const TabPanel = (props) => {
-    const { children, value, index, ...other } = props;
+    const {children, value, index, ...other} = props;
 
     return (
         <div
@@ -131,11 +131,11 @@ const ProfileLayout = () => {
                         American spirit in that we are multi-cultural and multi-religious.
                         <br/>
                         <br/>
-                        Dad is a former alter boy from St. Helen's Parish in Ukrainian Village, a wandering christian
-                        spirit, with a sprinkling of Methodist, Buddhism and who admires the Baháʼí Faith. His hobbies
-                        involve maintaining a 100-year old farm house in Roger's Park, listening to music and having fun
-                        while being as productive as humanly possible. His mantra is "Work Hard and Play Hard, OMD (One
-                        More Day), OMG, (Oh my Gawd) and BHAG (Big Hairy Audacious Goals)".
+                        Dad is a former altar boy from St. Helen's Parish in Ukrainian Village, a wandering Christian
+                        spirit with a sprinkling of Methodism, Buddhism, and admiration for the Baháʼí Faith. His
+                        hobbies include maintaining a 100-year-old farmhouse in Rogers Park, listening to music, and
+                        having fun while being as productive as possible. His mantra is "Work Hard and Play Hard, OMD
+                        (One More Day), OMG (Oh my God), and BHAG (Big Hairy Audacious Goals)."
                         <br/>
                         <br/>
                         Mom is a former beauty queen, chemist and medical student with a strong faith derived from the
@@ -164,24 +164,23 @@ const ProfileLayout = () => {
                     <p>Email: <a href={'mailto: jello10298@gmail.com'}>jello10298 at[😉] gmail.com</a></p>
                     <p>Role: Father / Husband</p>
                     <p>Phone: <a href={'tel:+13123076448'}>+1 (312) 307-6448</a></p>
-                        <a
-                            href='/resume/Angelo Gonzalez - One Page.pdf'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className="button download-button resume-button"
-                            onClick={handleResumeClick}>
-                            Download Resume &nbsp;
-                            <PictureAsPdfIcon/>
-                        </a>
+                    <a
+                        href='/resume/Angelo Gonzalez - One Page.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
+                        Download Resume &nbsp;
+                        <PictureAsPdfIcon/>
+                    </a>
                 </TabPanel>
             </div>
             <div className="right-panel">
-                <h2>The Magician</h2>
+                <h2 className={'alex-brush-regular'} style={{ margin: 0, fontSize: '2.3em'}}>The Magician</h2>
                 <img
                     src='/Firefly-Dali-inspired-image-of-the-magician-tarot-card-that-contains-a-transparent-Augusta-window-in.png'
                     alt="Profile"/>
                 <p>We all have natural talents, discover yours.</p>
-                {/*<Link to={'/tarot'} className={'button'}>Play Now</Link>*/}
                 <Link to={'/tarot'} className="button download-button play-button" style={{textDecoration: 'none'}}>
                     Play Dali Tarot Now&nbsp;
                     <RocketLaunchIcon/>
