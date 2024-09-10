@@ -5,6 +5,7 @@ import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {Gallery} from "react-grid-gallery";
 import {tilesData} from "./tilesData";
+import AnimatedText from "../AnimatedText/AnimatedText";
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const slider = (
@@ -82,7 +83,9 @@ function Portfolio() {
         <>
             <hr className={'portfolio-hr'}/>
             <div className={'portfolio-container'}>
-                <h1 className={'portfolio-heading'}>Portfolio</h1>
+                {/*<h1 className={'portfolio-heading'}>Portfolio</h1>*/}
+                <AnimatedText text={'Portfolio'} />
+
 
                 <Gallery images={tilesData}
                          enableImageSelection={false}

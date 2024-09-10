@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import TarotDeck from "../TarotDeck/TarotDeck";
 import {useTarotGameLogic} from "../TarotGameLogicContext/TarotGameLogicContext";
 import TarotCard from "../TarotCard/TarotCard";
+import AnimatedText from "../AnimatedText/AnimatedText";
 
 Modal.setAppElement('#root');
 
@@ -43,7 +44,7 @@ function TarotGame() {
 
     return (
         <>
-
+            <AnimatedText text={'Fortune Teller'} />
             <div
                 className='welcome'
                 ref={welcomeScreen}

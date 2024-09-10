@@ -7,6 +7,9 @@
   padding: 20px;
   margin: 0 auto;
   max-width: 1980px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--background-color);
 }
 
 @media (max-width: 1024px) {
@@ -28,6 +31,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 24px;
 }
 
 .right-panel img {
