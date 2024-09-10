@@ -211,7 +211,13 @@ button.button {
     border-radius: 15px;
     transition: opacity 0.8s;
     text-decoration: none;
+    display: inline-flex;
 }
+
+button.button:hover {
+    background-color: #f3b414;
+}
+
 
 button.button.visible {
     opacity: 1;

@@ -1,0 +1,54 @@
+/* ProfileLayout.css */
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.left-panel {
+  flex: 1;
+  padding-right: 6.2em;
+  text-align: left;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-panel img {
+  max-width: 100%;
+  max-height: 60vh;
+}
+
+.button.download-button {
+  display: flex;
+}
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.download-button:active {
+  background-color: #004085;
+  transform: scale(1);
+}
