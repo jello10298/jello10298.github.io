@@ -105,13 +105,13 @@ input[type=range]::-moz-slider-thumb {
     -webkit-appearance: none;
 }
 
-p {
-    margin: 2px;
-    margin-bottom: 0;
-    font-size: .8em;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-}
+/*p {*/
+/*    margin: 2px;*/
+/*    margin-bottom: 0;*/
+/*    font-size: .8em;*/
+/*    -webkit-user-select: none;*/
+/*    -moz-user-select: none;*/
+/*}*/
 
 #generate-button {
     margin-top: 8px;
@@ -214,10 +214,10 @@ p {
         margin: auto;
     }
 
-    p {
-        margin: auto;
-        font-size: .8em;
-    }
+    /*p {*/
+    /*    margin: auto;*/
+    /*    font-size: .8em;*/
+    /*}*/
 
     #generate-button {
         margin-top: 8px;
@@ -233,10 +233,10 @@ p {
 
 
 @media (min-width: 420px) and (orientation: landscape) {
-    p {
-        font-size: .9em;
-        margin-bottom: 5px;
-    }
+    /*p {*/
+    /*    font-size: .9em;*/
+    /*    margin-bottom: 5px;*/
+    /*}*/
 
     #generate-button {
         font-size: .9em;
@@ -261,10 +261,10 @@ p {
 
 @media (min-width: 420px) and (min-height: 510px) {
 
-    p {
-        font-size: 1.1em;
-        margin-bottom: 5px;
-    }
+    /*p {*/
+    /*    font-size: 1.1em;*/
+    /*    margin-bottom: 5px;*/
+    /*}*/
 
     #generate-button {
         padding: 18px;

@@ -34,7 +34,7 @@ const TabPanel = (props) => {
             aria-labelledby={`tab-${index}`}
             {...other}
         >
-            {value === index && <Box p={0}><Typography>{children}</Typography></Box>}
+            {value === index && <Box p={0} pr={1}><Typography>{children}</Typography></Box>}
         </div>
     );
 };
@@ -64,7 +64,7 @@ const ProfileLayout = () => {
                         <CustomTab label="Personal" id="tab-1"/>
                     </CustomTabs>
                 </CustomAppBar>
-                <TabPanel value={value} index={0} sx={{padding: 0}}>
+                <TabPanel value={value} index={0}>
                     <h2>Professional</h2>
                     <p>
                         Angelo Gonzalez is an enthusiastic and ambitious software developer with over two decades of

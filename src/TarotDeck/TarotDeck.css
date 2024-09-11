@@ -25,7 +25,7 @@
 }
 
 .tarot-deck .tarot-card {
-    min-width: 370px;
+    /*min-width: 370px;*/
 }
 
 .tarot-deck .tarot-card:nth-child(2n + 1) {

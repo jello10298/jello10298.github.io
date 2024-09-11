@@ -22,11 +22,22 @@ function App() {
                             ))
                         }
                     </Routes>
+                    <div style={{opacity: 0}}>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
                 </div>
-                <ColorPalette />
+                <ColorPalette/>
             </Router>
         </div>
-);
+    );
 }
 
 export default App;

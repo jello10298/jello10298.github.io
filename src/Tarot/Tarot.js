@@ -44,13 +44,14 @@ function TarotGame() {
 
     return (
         <>
-            <AnimatedText text={'Fortune Teller'} />
-            <div
-                className='welcome'
-                ref={welcomeScreen}
-                onClick={() => {
-                    hideWelcome() && drawThreeCards()
-                }}/>
+            <div ref={welcomeScreen}>
+                <AnimatedText text={'Tarot Game'}/>
+                <div
+                    className='welcome'
+                    onClick={() => {
+                        hideWelcome() && drawThreeCards()
+                    }}/>
+            </div>
 
             <div className={'tarot-container'}>
                 {
@@ -76,7 +77,7 @@ function TarotGame() {
                                 const newIsFlipped = [...isLocalCardFlipped];
                                 newIsFlipped[index] = !newIsFlipped[index];
                                 setIsLocalCardFlipped(newIsFlipped);
-                            }} key={index + 10000} gameCard={true} />
+                            }} key={index + 10000} gameCard={true}/>
                         </div>
                     )
                 }
@@ -104,14 +105,14 @@ function TarotGame() {
             {
                 // currentThreeCards &&
                 // countFlippedCards() >= 3 &&
-                isLocalCardFlipped.filter(value => value).length === isLocalCardFlipped.length &&
+                // isLocalCardFlipped.filter(value => value).length === isLocalCardFlipped.length &&
                 <button className={`button ${currentThreeCards ? 'visible' : ''}`} onClick={() => {
                     resetGame();
                     resetDeck();
-                    drawThreeCards();
+                    hideWelcome() && drawThreeCards();
                     // setTimeout(() => drawThreeCards(), 1000);
                 }}>
-                    Try Again
+                    Draw 3 Cards
                 </button>
             }
 
