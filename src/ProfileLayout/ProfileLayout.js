@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import {AppBar, Tabs, Tab, Box, Typography, styled} from "@mui/material";
+import {trackEvent} from "../Analytics/Analytics";
 
 const CustomAppBar = styled(AppBar)(({theme}) => ({
     borderBottom: `1px solid ${theme.palette.divider}`,
@@ -43,6 +44,11 @@ const ProfileLayout = () => {
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
+        if (newValue === 0) {
+            trackEvent('About Me - Professional');
+        } else {
+            trackEvent('About Me - Personal');
+        }
         setValue(newValue);
     };
 

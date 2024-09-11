@@ -113,7 +113,7 @@ function Menu() {
     const handleCVResumeClick = () => {
         gtag !== undefined && gtag('event', 'download_resume', {
             event_category: 'engagement',
-            event_label: 'Download Resume',
+            event_label: 'Download CV',
             value: 1
         });
     };

@@ -15,7 +15,8 @@ function TarotGame() {
         currentThreeCards,
         resetGame,
         revealAllCards,
-        hideAllCards
+        hideAllCards,
+        trackEvent,
     } = useTarotGameLogic();
 
     const welcomeScreen = createRef();
@@ -27,6 +28,7 @@ function TarotGame() {
 
     const hideWelcome = () => {
         if (welcomeScreen.current !== null) {
+            trackEvent('Welcome Screen Clicked');
             welcomeScreen.current.style.height = 0;
             welcomeScreen.current.style.opacity = 0;
             welcomeScreen.current.style.pointerEvents = 'none';
