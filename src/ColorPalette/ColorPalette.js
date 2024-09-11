@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Box, Button, Modal} from '@mui/material';
 import {PhotoshopPicker} from 'react-color';
 import {trackEvent} from "../Analytics/Analytics";
+import RestoreIcon from '@mui/icons-material/Restore';
 
 const initialColors = {
     // magentaHaze: '#9E4770',
@@ -57,6 +58,58 @@ const ColorPalette = () => {
         });
     }, []);
 
+    /**
+     * Converts a hex color to RGB components.
+     * @param {string} hex - The hex color code.
+     * @returns {object} An object containing r, g, and b components.
+     */
+    function hexToRgb(hex) {
+        hex = hex.replace(/^#/, ''); // Remove the leading # if present
+        let bigint = parseInt(hex, 16);
+
+        // If shorthand notation, convert to full hex
+        if (hex.length === 3) {
+            return {
+                r: (bigint >> 8 & 0xF) * 17, // equivalent to (bigint >> 8 & 0xF0) | (bigint >> 8 & 0xF0)
+                g: (bigint >> 4 & 0xF) * 17,
+                b: (bigint & 0xF) * 17,
+            };
+        }
+
+        // Full hex notation
+        return {
+            r: (bigint >> 16) & 255,
+            g: (bigint >> 8) & 255,
+            b: bigint & 255
+        };
+    }
+
+    /**
+     * Calculates the luminance of an RGB color.
+     * @param {number} r - Red component.
+     * @param {number} g - Green component.
+     * @param {number} b - Blue component.
+     * @returns {number} The luminance of the color.
+     */
+    function getLuminance(r, g, b) {
+        const a = [r, g, b].map(v => {
+            v /= 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        });
+        return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+    }
+
+    /**
+     * Determines the contrasting color for a given hex color.
+     * @param {string} colorKey - The hex color code (e.g., "#FFFFFF").
+     * @returns {string} The contrasting color ("#000000" or "#FFFFFF").
+     */
+    function getContrastingColor(colorKey) {
+        const { r, g, b } = hexToRgb(colorKey);
+        const luminance = getLuminance(r, g, b);
+        return luminance > 0.5 ? '#000000' : '#FFFFFF';
+    }
+
     return (
         <Box className="color_pallet" sx={{ display: 'flex', position: 'absolute', right: '20px'}}>
             {Object.entries(colors).map(([colorKey, colorValue]) => (
@@ -70,7 +123,7 @@ const ColorPalette = () => {
                         backgroundColor: colorValue,
                         cursor: 'pointer',
                         margin: 1,
-                        border: colorKey === 'background-color' ? '1px solid gray' : undefined,
+                        border: `1px solid ${getContrastingColor(colorValue)}`,
                     }}
                 />
             ))}
@@ -78,14 +131,17 @@ const ColorPalette = () => {
                 <Button
                     variant="contained"
                     sx={{
-                        backgroundColor: 'var(--menu-color)',
+                        backgroundColor: 'transparent',
+                        boxShadow: 'none',
                         ':hover': {
-                            backgroundColor: 'var(--menu-color)', // Same color on hover for simplicity
+                            backgroundColor: 'transparent', // Same color on hover for simplicity
+                            boxShadow: 'none',
                         }
                     }}
                     onClick={resetColors}
                 >
-                    Reset Colors
+                    {/*Reset Colors*/}
+                    <RestoreIcon sx={{ color: getContrastingColor(colors['background-color']) }}/>
                 </Button>
             )}
             <Modal open={open} onClose={handleClose}>

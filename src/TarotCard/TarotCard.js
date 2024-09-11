@@ -67,7 +67,7 @@ const TarotCard = ({card, isFlippable = true, isFlipped = false, gameCard = fals
 
                         <div className="close-icon" onClick={() => {
                             toggleModal(card)
-                        }}><CloseIcon/></div>
+                        }}><CloseIcon fontSize={'large'}/></div>
                     </div>
                 </div>
             </Modal>

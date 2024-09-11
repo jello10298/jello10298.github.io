@@ -1,5 +1,11 @@
 export const tilesData = [
-    {src: "/portfolio/Grid/UHC.jpg", width: 622, height: 361,},
+    {
+        name: 'United HealthCare, Inc.',
+        src: "/portfolio/Grid/UHC.jpg",
+        width: 622,
+        height: 361,
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    },
     {src: "/portfolio/Grid/Hyatt.jpg", width: 503, height: 360},
     {src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg", width: 320, height: 212,},
     {src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg", width: 270, height: 180,},

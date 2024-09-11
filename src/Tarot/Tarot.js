@@ -47,12 +47,14 @@ function TarotGame() {
     return (
         <>
             <div ref={welcomeScreen}>
-                <AnimatedText text={'Tarot Game'}/>
-                <div
-                    className='welcome'
-                    onClick={() => {
-                        hideWelcome() && drawThreeCards()
-                    }}/>
+                <AnimatedText text={'Reflect on your question ... then'}/>
+                <div style={{display: 'flex'}}>
+                    <div
+                        className='welcome'
+                        onClick={() => {
+                            hideWelcome() && drawThreeCards()
+                        }}/>
+                </div>
             </div>
 
             <div className={'tarot-container'}>

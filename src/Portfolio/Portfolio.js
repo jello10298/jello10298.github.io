@@ -81,7 +81,6 @@ const slider = (
 function Portfolio() {
     return (
         <>
-            <hr className={'portfolio-hr'}/>
             <div className={'portfolio-container'}>
                 {/*<h1 className={'portfolio-heading'}>Portfolio</h1>*/}
                 <AnimatedText text={'Portfolio'} />
@@ -90,7 +89,7 @@ function Portfolio() {
                 <Gallery images={tilesData}
                          enableImageSelection={false}
                          onClick={(index) => {
-                             // alert(index);
+                             alert(index);
                          }}
                 />
 

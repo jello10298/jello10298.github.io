@@ -7,6 +7,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: var(--background-color);
     top: 0;
     left: 0;
     height: 80vh;
@@ -162,7 +163,7 @@
 }
 
 .cardName {
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 16px;
 }
 
@@ -286,16 +287,17 @@ button.button.show-all-cards {
 
 .modal-content {
     display: flex;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 968px) {
     .modal-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 
 .graphic-content {
-    width: 50%;
+    /*width: 50%;*/
 }
 
 @media (max-width: 968px) {
@@ -306,11 +308,12 @@ button.button.show-all-cards {
 
 .graphic-content img {
     border-radius: 15px;
+    max-height: 93vh;
 }
 
 
 .text-content {
-    width: 50%;
+    max-width: 50%;
     padding: 0 24px 24px 24px;
     font-size: 1.3em;
 }
@@ -318,7 +321,7 @@ button.button.show-all-cards {
 @media (max-width: 968px) {
     .text-content {
         padding-top: 24px;
-        width: 100%;
+        max-width: 100%;
     }
 
     .text-content b {
@@ -331,8 +334,9 @@ button.button.show-all-cards {
 }
 
 .text-content p {
-    /*color: var(--background-color);*/
+    color: var(--text-color);
     margin-bottom: 16px;
+    line-height: 2.3em;
 }
 
 .close-icon {
