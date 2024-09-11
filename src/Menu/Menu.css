@@ -48,7 +48,7 @@
 .hamburger .line {
     width: 100%;
     height: 4px;
-    background-color: #282c34;
+    background-color: var(--background-color);
     position: absolute;
     pointer-events: none;
 }
@@ -72,7 +72,7 @@ ul {
 }
 
 ul li {
-    color: #282c34;
+    color: var(--background-color);
     padding: 20px 0;
 }
 
@@ -99,7 +99,7 @@ ul li hr.styled:before { /* Not really supposed to work, but does */
 }
 
 ul li a {
-    color: #282c34;
+    color: var(--background-color);
     text-decoration: none;
 }
 

@@ -6,7 +6,7 @@
 }
 
 .portfolio-container {
-    max-width: 80vw;
+    max-width: 1152px;
     margin: 0 auto;
 }
 
@@ -46,7 +46,7 @@
     --control-button-background: transparent;
     --control-bullet-color: #fad0ce;
     --control-bullet-active-color: #d5b1af;
-    --loader-bar-color: #851515;
+    --loader-bar-color: #FED057;
     --loader-bar-height: 6px;
 }
 

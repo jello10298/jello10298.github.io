@@ -4,8 +4,12 @@ import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {Gallery} from "react-grid-gallery";
-import {tilesData} from "./tilesData";
+import {tilesData, defaultImages} from "./tilesData";
 import AnimatedText from "../AnimatedText/AnimatedText";
+import React, {useState} from "react";
+import Modal from "react-modal";
+import CloseIcon from "@mui/icons-material/Close";
+
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const slider = (
@@ -17,81 +21,155 @@ const slider = (
         className="awesome-slider"
         fillParent={false}
     >
-        <div data-src={'/portfolio/hyatt-brands.png'} />
-        <div data-src={'/portfolio/Hyatt/chiph.png'} />
-        <div data-src={'/portfolio/Hyatt/grand-hyatt.png'} />
-        <div data-src={'/portfolio/Hyatt/hyatt-regency.png'} />
-        <div data-src={'/portfolio/Hyatt/hyatt.png'} />
-        <div data-src={'/portfolio/Hyatt/keysh.png'} />
-        <div data-src={'/portfolio/Hyatt/hyatt-place.png'} />
-        <div data-src={'/portfolio/Hyatt/hyatt-house.png'} />
-        <div data-src={'/portfolio/Hyatt/hyatt-studios.png'} />
-        <div data-src={'/portfolio/Hyatt/urcove.png'} />
-        <div data-src={'/portfolio/Hyatt/miraval.png'} />
-        <div data-src={'/portfolio/Hyatt/alila.png'} />
-        <div data-src={'/portfolio/Hyatt/andaz.png'} />
-        <div data-src={'/portfolio/Hyatt/thompson.png'} />
-        <div data-src={'/portfolio/UHC.png'} />
-        <div data-src={'/portfolio/RallyHealth.png'} />
-        <div data-src={'/portfolio/Microsoft - Buy Box.png'} />
-        <div data-src={'/portfolio/Microsoft - Remote Install.png'} />
-        <div data-src={'/portfolio/HyattEvents.png'} />
-        <div data-src={'/portfolio/Lundbeck.png'} />
-        <div data-src={'/portfolio/Rolex.png'} />
-        <div data-src={'/portfolio/archive2/4.aim.jpg'} />
-        <div data-src={'/portfolio/archive2/3.v4l.jpg'} />
-        <div data-src={'/portfolio/archive2/1.wowvapor.jpg'} />
-        <div data-src={'/portfolio/archive2/2.wowvapor.jpg'} />
-        <div data-src={'/portfolio/archive2/5.microsoft.jpg'} />
-        <div data-src={'/portfolio/archive2/6.wheelworks.jpg'} />
-        <div data-src={'/portfolio/archive2/7.hibdon.jpg'} />
-        <div data-src={'/portfolio/dominos/1.unt.jpg'} />
-        <div data-src={'/portfolio/dominos/2.uconn.jpg'} />
-        <div data-src={'/portfolio/dominos/3.louisville.jpg'} />
-        <div data-src={'/portfolio/dominos/4.midland.jpg'} />
-        <div data-src={'/portfolio/dominos/5.charolette.jpg'} />
-        <div data-src={'/portfolio/dominos/6.mexico.jpg'} />
-        <div data-src={'/portfolio/dominos/7.winston-salem.jpg'} />
-        <div data-src={'/portfolio/dominos/8.carolinas.jpg'} />
-        <div data-src={'/portfolio/dominos/9.stlouis.jpg'} />
-        <div data-src={'/portfolio/dominos/10.ordermydominos.jpg'} />
-        <div data-src={'/portfolio/dominos/11.ucf.jpg'} />
-        <div data-src={'/portfolio/dominos/12.islavista.jpg'} />
-        <div data-src={'/portfolio/dominos/13.missouri.jpg'} />
-        <div data-src={'/portfolio/dominos/14.uncc.jpg'} />
-        <div data-src={'/portfolio/dominos/15.dallas.jpg'} />
-        <div data-src={'/portfolio/dominos/16.milehigh.jpg'} />
-        <div data-src={'/portfolio/dominos/17.chicago.jpg'} />
-        <div data-src={'/portfolio/dominos/18.milwaukee.jpg'} />
-        <div data-src={'/portfolio/archive2/8.halloween.jpg'} />
-        <div data-src={'/portfolio/archive1/2.nlb.jpg'} />
-        <div data-src={'/portfolio/archive1/3.dtdoggy.jpg'} />
-        <div data-src={'/portfolio/archive1/1.ama.jpg'} />
-        <div data-src={'/portfolio/Discover.png'} />
-        <div data-src={'/portfolio/IEEE - EMBS.png'} />
-        <div data-src={'/portfolio/iCAIR.png'} />
-        <div data-src={'/portfolio/InternationalVirtualInstitute.png'} />
-
-
+        {/*<div data-src={'/portfolio/hyatt-brands.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/chiph.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/grand-hyatt.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/hyatt-regency.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/hyatt.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/keysh.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/hyatt-place.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/hyatt-house.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/hyatt-studios.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/urcove.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/miraval.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/alila.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/andaz.png'}/>*/}
+        {/*<div data-src={'/portfolio/Hyatt/thompson.png'}/>*/}
+        {/*<div data-src={'/portfolio/UHC.png'}/>*/}
+        {/*<div data-src={'/portfolio/RallyHealth.png'}/>*/}
+        {/*<div data-src={'/portfolio/Microsoft - Buy Box.png'}/>*/}
+        {/*<div data-src={'/portfolio/Microsoft - Remote Install.png'}/>*/}
+        {/*<div data-src={'/portfolio/HyattEvents.png'}/>*/}
+        {/*<div data-src={'/portfolio/Lundbeck.png'}/>*/}
+        {/*<div data-src={'/portfolio/Rolex.png'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/4.aim.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/3.v4l.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/1.wowvapor.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/2.wowvapor.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/5.microsoft.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/6.wheelworks.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/7.hibdon.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/1.unt.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/2.uconn.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/3.louisville.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/4.midland.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/5.charolette.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/6.mexico.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/7.winston-salem.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/8.carolinas.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/9.stlouis.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/10.ordermydominos.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/11.ucf.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/12.islavista.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/13.missouri.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/14.uncc.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/15.dallas.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/16.milehigh.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/17.chicago.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/dominos/18.milwaukee.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive2/8.halloween.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive1/2.nlb.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive1/3.dtdoggy.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/archive1/1.ama.jpg'}/>*/}
+        {/*<div data-src={'/portfolio/Discover.png'}/>*/}
+        {/*<div data-src={'/portfolio/IEEE - EMBS.png'}/>*/}
+        {/*<div data-src={'/portfolio/iCAIR.png'}/>*/}
+        {/*<div data-src={'/portfolio/InternationalVirtualInstitute.png'}/>*/}
 
 
     </AutoplaySlider>
 );
 
 function Portfolio() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
     return (
         <>
             <div className={'portfolio-container'}>
-                {/*<h1 className={'portfolio-heading'}>Portfolio</h1>*/}
-                <AnimatedText text={'Portfolio'} />
-
+                <AnimatedText text={'Portfolio'}/>
 
                 <Gallery images={tilesData}
                          enableImageSelection={false}
                          onClick={(index) => {
-                             alert(index);
+                             if (tilesData[index].name) {
+                                 setSelectedIndex(index);
+                                 setShowModal(true);
+                             }
                          }}
                 />
+
+                {showModal &&
+                    <Modal
+                        isOpen={showModal}
+                        onRequestClose={() => {
+                            setShowModal(false)
+                        }}
+                        contentLabel="My dialog"
+                        className="mymodal"
+                        overlayClassName="myoverlay"
+                        closeTimeoutMS={500}
+                    >
+                        <div className="modal-content">
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}>
+                                <AnimatedText text={tilesData[selectedIndex].name}/>
+                                <div style={{
+                                    backgroundColor: 'var(--background-color)',
+                                    position: 'relative',
+                                    zIndex: 1,
+                                }}>
+                                    <p>
+                                        {tilesData[selectedIndex].desc}
+                                    </p>
+                                    {
+                                        (tilesData[selectedIndex].images &&
+                                            <AutoplaySlider
+                                                play={true}
+                                                // cancelOnInteraction={false}
+                                                interval={2000}
+                                                animation={'cubeAnimation'}
+                                                className="awesome-slider"
+                                                fillParent={false}
+                                            >
+                                                {
+                                                    tilesData[selectedIndex].images.map((image) => (
+                                                        <div data-src={image}/>
+                                                    ))
+                                                }
+                                            </AutoplaySlider>) ||
+                                        (
+                                        <>
+                                        <h1><b>{tilesData[selectedIndex].name}</b> Images - <i>Not Available</i></h1>
+                                        <h2>Here are some older portfolio pieces to view</h2>
+                                        <AutoplaySlider
+                                            play={true}
+                                            // cancelOnInteraction={false}
+                                            interval={2000}
+                                            animation={'cubeAnimation'}
+                                            className="awesome-slider"
+                                            fillParent={false}
+                                        >
+                                            {
+                                                defaultImages.map((image) => (
+                                                    <div data-src={image}/>
+                                                ))
+                                            }
+                                        </AutoplaySlider>
+                                        </>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <div className="close-icon" onClick={() => {
+                                setShowModal(false);
+                            }}><CloseIcon fontSize={'large'}/></div>
+                        </div>
+                    </Modal>
+                }
+
 
                 <br/>
                 <br/>
@@ -100,7 +178,7 @@ function Portfolio() {
                 <br/>
                 <br/>
                 <br/>
-                {slider}
+                {/*{slider}*/}
                 <br/>
                 <br/>
                 <br/>
