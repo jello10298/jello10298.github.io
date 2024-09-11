@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Button, Modal} from '@mui/material';
-import { ChromePicker } from 'react-color';
+import {PhotoshopPicker} from 'react-color';
+import {trackEvent} from "../Analytics/Analytics";
 
 const initialColors = {
     // magentaHaze: '#9E4770',
@@ -23,6 +24,7 @@ const ColorPalette = () => {
         setCurrentColor(colorKey);
         setSelectedColor(colors[colorKey]);
         setOpen(true);
+        trackEvent('Color Palette Opened')
     };
 
     const handleClose = () => setOpen(false);
@@ -32,9 +34,11 @@ const ColorPalette = () => {
             ...colors,
             [currentColor]: color.hex
         });
+        setSelectedColor(color);
         document.documentElement.style.setProperty(`--${currentColor}`, color.hex);
+        trackEvent('Color Palette Changed')
         setIsModified(true); // Set the modified state to true
-        handleClose();
+        // handleClose();
     };
 
     const resetColors = () => {
@@ -42,6 +46,7 @@ const ColorPalette = () => {
         Object.entries(initialColors).forEach(([colorKey, colorValue]) => {
             document.documentElement.style.setProperty(`--${colorKey}`, colorValue);
         });
+        trackEvent('Color Palette Reset')
         setIsModified(false); // Reset the modified state to false
     };
 
@@ -85,7 +90,7 @@ const ColorPalette = () => {
             )}
             <Modal open={open} onClose={handleClose}>
                 <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
-                    <ChromePicker color={selectedColor} onChangeComplete={handleChangeComplete} />
+                    <PhotoshopPicker color={selectedColor} onChange={handleChangeComplete} onAccept={handleClose} onCancel={() => { resetColors(); handleClose();}} />
                 </Box>
             </Modal>
         </Box>
