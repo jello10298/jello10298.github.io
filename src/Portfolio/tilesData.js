@@ -45,7 +45,7 @@ export const tilesData = [
     // {src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg", width: 320, height: 212,},
     // {src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg", width: 270, height: 180,},
     {
-        name: 'Microsoft, Inc.',
+        name: 'Microsoft',
         src: "/portfolio/Grid/Microsoft.jpg",
         width: 502,
         height: 362,
@@ -69,7 +69,7 @@ export const tilesData = [
         ]
     },
     {
-        name: 'AT&T',
+        name: `AT&T`,
         src: "/portfolio/Grid/AT&T.jpg",
         width: 486,
         height: 361,

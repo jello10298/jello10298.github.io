@@ -9,6 +9,9 @@ import AnimatedText from "../AnimatedText/AnimatedText";
 import React, {useState} from "react";
 import Modal from "react-modal";
 import CloseIcon from "@mui/icons-material/Close";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import {NavigateNext} from "@mui/icons-material";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -84,6 +87,15 @@ function Portfolio() {
     const [showModal, setShowModal] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
+    const handlePrevious = () => {
+        const index = selectedIndex === 0 ? tilesData.length - 1 : selectedIndex - 1;
+        setSelectedIndex(index);
+    };
+    const handleNext = () => {
+        const index = (selectedIndex + 1) % tilesData.length;
+        setSelectedIndex(index);
+    };
+
     return (
         <>
             <div className={'portfolio-container'}>
@@ -115,7 +127,15 @@ function Portfolio() {
                                 display: 'flex',
                                 flexDirection: 'column',
                             }}>
-                                <AnimatedText text={tilesData[selectedIndex].name}/>
+                                <div style={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                }}>
+                                    {/*<NavigateBeforeIcon style={{ color: 'var(--menu-color)'}} fontSize={'large'} onClick={handlePrevious} />*/}
+                                    <AnimatedText text={tilesData[selectedIndex].name}/>
+                                    {/*<NavigateNextIcon style={{ color: 'var(--menu-color)'}} fontSize={'large'} onClick={handleNext} />*/}
+                                </div>
                                 <div style={{
                                     backgroundColor: 'var(--background-color)',
                                     position: 'relative',
