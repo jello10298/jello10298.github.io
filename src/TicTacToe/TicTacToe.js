@@ -51,6 +51,7 @@ const Game = () => {
     const [xIsNext, setXIsNext] = useState(true);
     const catMeowAudioRef = useRef(null);
     const funnyCatMeowAudioRef = useRef(null);
+    const angryCatMeowAudioRef = useRef(null);
 
     const handleClick = (i) => {
         const historyCopy = history.slice(0, stepNumber + 1);
@@ -83,8 +84,9 @@ const Game = () => {
 
     useEffect(() => {
         if (!winner && isBoardFull(current)) {
-            const audioRef = Math.random() < 0.5 ? catMeowAudioRef : funnyCatMeowAudioRef;
-            audioRef.current.play();
+            const audioRefs = [catMeowAudioRef, funnyCatMeowAudioRef, angryCatMeowAudioRef];
+            const randomRef = audioRefs[Math.floor(Math.random() * audioRefs.length)];
+            randomRef.current.play();
         }
     }, [current, winner]);
 
@@ -127,6 +129,9 @@ const Game = () => {
             </audio>
             <audio ref={funnyCatMeowAudioRef}>
                 <source src="/funny-meow-110120.mp3" type="audio/mpeg"/>
+            </audio>
+            <audio ref={angryCatMeowAudioRef}>
+                <source src="/angry-cat-meow-82091.mp3" type="audio/mpeg"/>
             </audio>
         </div>
     );
