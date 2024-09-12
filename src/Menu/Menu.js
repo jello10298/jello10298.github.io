@@ -134,11 +134,11 @@ function Menu() {
                            target={'_blank'}
                            rel={'noopener noreferrer'}
                            onClick={handleResumeClick}>
-                    Resume</a></li>
+                        Resume</a></li>
                     <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'}
                            target={'_blank'}
                            rel={'noopener noreferrer'}
-                            onClick={handleCVResumeClick}>Cirum
+                           onClick={handleCVResumeClick}>Cirum
                         Vitae</a></li>
                     <li><NavLink to={'/about'}>About</NavLink></li>
                     <li>
@@ -146,6 +146,9 @@ function Menu() {
                     </li>
                     <li>
                         <NavLink to={'/landscape-generator'}>Teraform</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={'/tic-tac-toe'}>Tic Tac Toe</NavLink>
                     </li>
                     {/*<li>*/}
                     {/*    <Link to={'/nes-emulator'}>NES Emulator</Link>*/}

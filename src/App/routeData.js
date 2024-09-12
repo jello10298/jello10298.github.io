@@ -5,6 +5,7 @@ import DiamondSquare from "../Portfolio/Components/DiamondSquare";
 import React from "react";
 import {TarotGameLogicProvider} from "../TarotGameLogicContext/TarotGameLogicContext";
 import tarotData from "../Tarot/data";
+import TicTacToe from "../TicTacToe/TicTacToe";
 
 export const routeData = [
     {
@@ -35,5 +36,10 @@ export const routeData = [
         path: '/landscape-generator',
         element: <DiamondSquare/>,
         title: 'Landscape Generator',
+    },
+    {
+        path: '/tic-tac-toe',
+        element: <TicTacToe/>,
+        title: 'Tic Tac Toe',
     }
 ];

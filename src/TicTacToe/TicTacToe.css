@@ -1,0 +1,111 @@
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game {
+    flex-direction: column-reverse;
+}
+
+.game-board {
+    position: fixed;
+    z-index: 1;
+}
+
+.history {
+    display: none;
+}
+
+.game-info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    color: var(--text-color);
+}
+
+.status {
+    position: absolute;
+    top: 40px;
+    font-size: 2.4em;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    color: var(--menu-color);
+}
+
+.MuiButtonBase-root.restart-game {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+ol, ul {
+    padding-left: 30px;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.square {
+    background: var(--background-color);
+    border: 1px solid var(--menu-color);
+    color: var(--menu-color);
+    float: left;
+    font-size: 8em;
+    font-weight: bold;
+    line-height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    height: 20vh;
+    width: 20vw;
+}
+
+@media (max-width: 640px) {
+    .square {
+        font-size: 4em;
+    }
+}
+
+.square:focus {
+    outline: none;
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+/* Borderless perimeter adjustments */
+.row-0.col-0,
+.row-0.col-1,
+.row-0.col-2 {
+    border-top: none;
+}
+
+.row-2.col-0,
+.row-2.col-1,
+.row-2.col-2 {
+    border-bottom: none;
+}
+
+.row-0.col-0,
+.row-1.col-0,
+.row-2.col-0 {
+    border-left: none;
+}
+
+.row-0.col-2,
+.row-1.col-2,
+.row-2.col-2 {
+    border-right: none;
+}
