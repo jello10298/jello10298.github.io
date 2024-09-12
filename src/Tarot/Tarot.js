@@ -5,6 +5,7 @@ import TarotDeck from "../TarotDeck/TarotDeck";
 import {useTarotGameLogic} from "../TarotGameLogicContext/TarotGameLogicContext";
 import TarotCard from "../TarotCard/TarotCard";
 import AnimatedText from "../AnimatedText/AnimatedText";
+import TarotWithRedux from "../TarotWithRedux/TarotWithRedux";
 
 Modal.setAppElement('#root');
 
@@ -46,6 +47,7 @@ function TarotGame() {
 
     return (
         <>
+
             <div ref={welcomeScreen}>
                 <AnimatedText text={'Reflect on your question ... then'}/>
                 <div style={{display: 'flex'}}>

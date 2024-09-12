@@ -15,13 +15,13 @@
     left: 0;
 }
 
-.menu-inner {
+#menu .menu-inner {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-#blob {
+#menu #blob {
     top: 0;
     z-index: -1;
     right: 60px;
@@ -30,12 +30,12 @@
     position: absolute;
 }
 
-#blob-path {
+#menu #blob-path {
     height: 100%;
     fill: var(--menu-color);
 }
 
-.hamburger {
+#menu .hamburger {
     right: 20px;
     position: absolute;
     width: 20px;
@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 
-.hamburger .line {
+#menu .hamburger .line {
     width: 100%;
     height: 4px;
     background-color: var(--background-color);
@@ -53,16 +53,16 @@
     pointer-events: none;
 }
 
-.hamburger .line:nth-child(2) {
+#menu .hamburger .line:nth-child(2) {
     top: 50%;
     margin-top: -2px;
 }
 
-.hamburger .line:nth-child(3) {
+#menu .hamburger .line:nth-child(3) {
     bottom: 0;
 }
 
-ul {
+#menu ul {
     padding: 0;
     list-style: none;
     width: 80%;
@@ -71,12 +71,12 @@ ul {
     top: 10px;
 }
 
-ul li {
+#menu ul li {
     color: var(--background-color);
     padding: 20px 0;
 }
 
-ul li hr.styled {
+#menu ul li hr.styled {
     overflow: visible; /* For IE */
     height: 30px;
     border-style: solid;
@@ -87,7 +87,7 @@ ul li hr.styled {
     left: -46px;
 }
 
-ul li hr.styled:before { /* Not really supposed to work, but does */
+#menu ul li hr.styled:before { /* Not really supposed to work, but does */
     display: block;
     content: "";
     height: 30px;
@@ -98,26 +98,26 @@ ul li hr.styled:before { /* Not really supposed to work, but does */
     border-radius: 20px;
 }
 
-ul li a {
+#menu ul li a {
     color: var(--background-color);
     text-decoration: none;
 }
 
-ul li a.active {
+#menu ul li a.active {
     font-weight: bold;
 }
 
-.linkedInLogo {
+#menu .linkedInLogo {
     position: absolute;
     bottom: 24px;
     width: 100%;
     text-align: center;
 }
 
-.linkedInLogo img {
+#menu .linkedInLogo img {
     width: 100px;
 }
 
-blockquote {
+#menu blockquote {
     margin: 0 60px;
 }

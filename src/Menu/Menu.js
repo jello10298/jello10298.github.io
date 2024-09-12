@@ -128,7 +128,7 @@ function Menu() {
 
             <div className="menu-inner">
                 <ul>
-                    <li><NavLink to={'/'}>Dali Tarot</NavLink></li>
+                    <li><NavLink to={'/'}>Dali Tarot v1</NavLink></li>
                     <li><NavLink to={'/portfolio'}>Portfolio</NavLink></li>
                     <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'}
                            target={'_blank'}
@@ -143,6 +143,9 @@ function Menu() {
                     <li><NavLink to={'/about'}>About</NavLink></li>
                     <li>
                         <hr width={'80%'} className={'styled'}/>
+                    </li>
+                    <li>
+                        <NavLink to={'/tarot-v2'}>Dali Tarot v2</NavLink>
                     </li>
                     <li>
                         <NavLink to={'/landscape-generator'}>Teraform</NavLink>

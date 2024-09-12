@@ -6,6 +6,7 @@ import React from "react";
 import {TarotGameLogicProvider} from "../TarotGameLogicContext/TarotGameLogicContext";
 import tarotData from "../Tarot/data";
 import TicTacToe from "../TicTacToe/TicTacToe";
+import TarotWithRedux from "../TarotWithRedux/TarotWithRedux";
 
 export const routeData = [
     {
@@ -26,11 +27,16 @@ export const routeData = [
         title: 'Portfolio',
     },
     {
-        path: '/tarot',
+        path: '/tarot-v1',
         element: <TarotGameLogicProvider cards={tarotData}>
             <TarotGame/>
         </TarotGameLogicProvider>,
-        title: 'Dali-inspired Tarot Game',
+        title: 'Dali-inspired Tarot Game v1',
+    },
+    {
+        path: '/tarot-v2',
+        element: <TarotWithRedux/>,
+        title: 'Dali-inspired Tarot Game v2',
     },
     {
         path: '/landscape-generator',
