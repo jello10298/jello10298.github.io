@@ -7,6 +7,7 @@ import {TarotGameLogicProvider} from "../TarotGameLogicContext/TarotGameLogicCon
 import tarotData from "../Tarot/data";
 import TicTacToe from "../TicTacToe/TicTacToe";
 import TarotWithRedux from "../TarotWithRedux/TarotWithRedux";
+import Timeline from "../Timeline/Timeline";
 
 export const routeData = [
     {
@@ -47,5 +48,10 @@ export const routeData = [
         path: '/tic-tac-toe',
         element: <TicTacToe/>,
         title: 'Tic Tac Toe',
+    },
+    {
+        path: '/timeline',
+        element: <Timeline />,
+        title: 'Work/Education Timeline',
     }
 ];
