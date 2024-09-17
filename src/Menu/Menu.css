@@ -8,6 +8,8 @@
     left: 60px;
     top: 0;
     z-index: 2;
+    font-family: monospace;
+    text-transform: lowercase;
 }
 
 #menu.expanded {
@@ -101,6 +103,8 @@
 #menu ul li a {
     color: var(--background-color);
     text-decoration: none;
+    font-family: monospace;
+    text-transform: lowercase;
 }
 
 #menu ul li a.active {

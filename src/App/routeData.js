@@ -8,18 +8,17 @@ import tarotData from "../Tarot/data";
 import TicTacToe from "../TicTacToe/TicTacToe";
 import TarotWithRedux from "../TarotWithRedux/TarotWithRedux";
 import Timeline from "../Timeline/Timeline";
+import AboutMe from "../AboutMe/AboutMe";
 
 export const routeData = [
     {
         path: '/',
-        element: <TarotGameLogicProvider cards={tarotData}>
-            <TarotGame/>
-        </TarotGameLogicProvider>,
+        element: <Home />,
         title: 'Home',
     },
     {
         path: '/about',
-        element: <Home/>,
+        element: <Home />,
         title: 'About Me',
     },
     {

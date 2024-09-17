@@ -4,7 +4,14 @@ import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import {Gallery} from "react-grid-gallery";
-import {tilesData, defaultImages} from "./tilesData";
+import {
+    tilesData,
+    defaultImages,
+    getArrowBackgroundColor,
+    getArrowColor,
+    getArrowBackground,
+    getArrowStyle
+} from "./tilesData";
 import AnimatedText from "../AnimatedText/AnimatedText";
 import React, {useState} from "react";
 import Modal from "react-modal";
@@ -12,6 +19,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import {NavigateNext} from "@mui/icons-material";
+import Timeline from "../Timeline/Timeline";
+import { ThumbnailImageProps } from "react-grid-gallery";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -83,6 +93,28 @@ const slider = (
     </AutoplaySlider>
 );
 
+const ImageComponent = (props) => {
+    const [show, setShow] = useState(true);
+    const {arrowBackgroundColor, ...imageProps} = props.imageProps;
+
+    if (show) {
+        return (<div>
+            <img {...imageProps} />
+            <div className="portfolio-grid-arrow">
+                <span style={{backgroundColor: 'rgba(160,160,160,0.3)', ...getArrowStyle(imageProps.src)}}>
+                    <ArrowOutwardIcon/>
+                </span>
+            </div>
+        </div>);
+    }
+
+    return (
+        <div style={{...props.imageProps.style, textAlign: "center"}} onMouseOver={() => setShow(true)}>
+            Hover to show
+        </div>
+    );
+};
+
 function Portfolio() {
     const [showModal, setShowModal] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -101,15 +133,21 @@ function Portfolio() {
             <div className={'portfolio-container'}>
                 <AnimatedText text={'Portfolio'}/>
 
-                <Gallery images={tilesData}
-                         enableImageSelection={false}
-                         onClick={(index) => {
-                             if (tilesData[index].name) {
-                                 setSelectedIndex(index);
-                                 setShowModal(true);
-                             }
-                         }}
-                />
+                <div style={{
+                    maxWidth: '1152px',
+                    margin: '0 auto',
+                }}>
+                    <Gallery images={tilesData}
+                             enableImageSelection={false}
+                             onClick={(index) => {
+                                 if (tilesData[index].name) {
+                                     setSelectedIndex(index);
+                                     setShowModal(true);
+                                 }
+                             }}
+                             thumbnailImageComponent={ImageComponent}
+                    />
+                </div>
 
                 {showModal &&
                     <Modal
@@ -148,8 +186,8 @@ function Portfolio() {
                                         (tilesData[selectedIndex].images &&
                                             <AutoplaySlider
                                                 play={true}
-                                                // cancelOnInteraction={false}
-                                                interval={2000}
+                                                cancelOnInteraction={true}
+                                                interval={5000}
                                                 animation={'cubeAnimation'}
                                                 className="awesome-slider"
                                                 fillParent={false}
@@ -161,24 +199,25 @@ function Portfolio() {
                                                 }
                                             </AutoplaySlider>) ||
                                         (
-                                        <>
-                                        <h1><b>{tilesData[selectedIndex].name}</b> Images - <i>Not Available</i></h1>
-                                        <h2>Here are some older portfolio pieces to view</h2>
-                                        <AutoplaySlider
-                                            play={true}
-                                            // cancelOnInteraction={false}
-                                            interval={2000}
-                                            animation={'cubeAnimation'}
-                                            className="awesome-slider"
-                                            fillParent={false}
-                                        >
-                                            {
-                                                defaultImages.map((image) => (
-                                                    <div data-src={image}/>
-                                                ))
-                                            }
-                                        </AutoplaySlider>
-                                        </>
+                                            <>
+                                                <h1><b>{tilesData[selectedIndex].name}</b> Images - <i>Not Available</i>
+                                                </h1>
+                                                <h2>Here are some older portfolio pieces to view</h2>
+                                                <AutoplaySlider
+                                                    play={true}
+                                                    // cancelOnInteraction={false}
+                                                    interval={2000}
+                                                    animation={'cubeAnimation'}
+                                                    className="awesome-slider"
+                                                    fillParent={false}
+                                                >
+                                                    {
+                                                        defaultImages.map((image) => (
+                                                            <div data-src={image}/>
+                                                        ))
+                                                    }
+                                                </AutoplaySlider>
+                                            </>
                                         )
                                     }
                                 </div>

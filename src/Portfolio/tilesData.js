@@ -1,10 +1,27 @@
 import React from "react";
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 export const defaultImages = [
     '/portfolio/archive1/2.nlb.jpg',
     '/portfolio/archive1/3.dtdoggy.jpg',
     '/portfolio/archive1/1.ama.jpg',
 ];
+
+export const getArrowBackgroundColor = (src) => {
+    return tilesData.filter((obj) => obj.src === src)[0].arrowBackgroundColor;
+}
+
+export const getArrowColor = (src) => {
+    return tilesData.filter((obj) => obj.src === src)[0].arrowColor;
+}
+
+export const getArrowBackground = (src) => {
+    return tilesData.filter((obj) => obj.src === src)[0].arrowBackground;
+}
+
+export const getArrowStyle = (src) => {
+    return tilesData.filter((obj) => obj.src === src)[0].arrowStyle;
+}
 
 export const tilesData = [
     {
@@ -18,7 +35,10 @@ export const tilesData = [
             '/portfolio/uhc1.png',
             '/portfolio/uhc2.png',
             '/portfolio/RallyHealth.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#50d0ff',
+        },
     },
     {
         name: 'Hyatt Hotels',
@@ -40,7 +60,11 @@ export const tilesData = [
             '/portfolio/Hyatt/urcove.png',
             '/portfolio/Hyatt/miraval.png',
             '/portfolio/Hyatt/alila.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: 'rgb(37,48,105)',
+            color: '#fff',
+        }
     },
     // {src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg", width: 320, height: 212,},
     // {src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg", width: 270, height: 180,},
@@ -54,7 +78,15 @@ export const tilesData = [
             '/portfolio/Microsoft - Buy Box.png',
             '/portfolio/Microsoft - Remote Install.png',
             '/portfolio/archive2/5.microsoft.jpg',
-        ]
+        ],
+        arrowStyle: {
+            background: `linear-gradient(45deg, #F25022, #EF3A12) 0 0 / 50% 50%,
+            linear-gradient(45deg, #7FBA00, #5EAA00) 100% 0 / 50% 50%,
+            linear-gradient(45deg, #00A4EF, #0089D4) 0 100% / 50% 50%,
+            linear-gradient(45deg, #FFB900, #FFA100) 100% 100% / 50% 50%`,
+            backgroundRepeat: 'no-repeat',
+            color: '#fff',
+        }
     },
     {
         name: 'valtech_',
@@ -66,7 +98,10 @@ export const tilesData = [
             '/portfolio/Rolex.png',
             '/portfolio/HyattEvents.png',
             '/portfolio/Lundbeck.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: 'rgb(232,94,53)',
+        }
     },
     {
         name: `AT&T`,
@@ -76,7 +111,14 @@ export const tilesData = [
         desc: 'While at the Chief Security Office, fixed performance bugs in the Customer Policy Tuning application (to aid in IPv4 to IPv6 transitions), assisted with "Bring Your Own Device" to work initiative (multiple profiles on one device) and pen-tested Fortinet/Palo Alto networks for security vulnerabilities and corporate configuration management.',
         images: [
             '/portfolio/att.webp',
-        ]
+        ],
+        arrowStyle: {
+            background: `url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA7dpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Q0JBRTE5OUQxMzIwNjgxMTgyMkFBNDMzMTdGMzc2RjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjA3QTk0QUY1MEUxMTFFNkJDRjJDNDBEOEM2MTJDMzMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjA3QTk0QUU1MEUxMTFFNkJDRjJDNDBEOEM2MTJDMzMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYzNDIwNkU1MkIyMDY4MTE4MjJBOEEwMDg1NDBD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')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            // color: 'grey',
+        }
     },
     {
         name: 'Chicago Ventures',

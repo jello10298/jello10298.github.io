@@ -1,3 +1,60 @@
 .timeline {
+    background-color: var(--background-color);
     color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+}
+
+.experience,
+.education {
+    width: 30vw;
+    position: relative;
+}
+
+.timeline .years {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 100px;
+}
+
+.timeline .years:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: var(--text-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline .years .year {
+    background-color: var(--background-color);
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/*// magentaHaze: '#9E4770',*/
+/*// royalBlue: '#496DDB',*/
+/*// sunglow: 'menu-color': '#FED057',*/
+/*// lightBlue: '#9DC7C8',*/
+/*// richBlack: '#010714'*/
+
+.timeline-tile {
+    background-color: #496DDB;
+    border-radius: 15px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.timeline-tile:hover {
+    opacity: 0.5;
 }

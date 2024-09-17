@@ -49,7 +49,7 @@ function TarotGame() {
         <>
 
             <div ref={welcomeScreen}>
-                <AnimatedText text={'Reflect on your question ... then'}/>
+                <AnimatedText text={'Reflect on your question &'}/>
                 <div style={{display: 'flex'}}>
                     <div
                         className='welcome'
