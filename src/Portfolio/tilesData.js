@@ -146,7 +146,10 @@ export const tilesData = [
             '/portfolio/cnh3.webp',
             '/portfolio/cnh1.jpg',
             '/portfolio/cnh2.jpg',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#b60d29',
+        },
     },
     {
         name: 'Firestone',
@@ -157,7 +160,11 @@ export const tilesData = [
         images: [
             '/portfolio/archive2/6.wheelworks.jpg',
             '/portfolio/archive2/7.hibdon.jpg',
-        ]
+        ],
+        arrowStyle: {
+            color: 'rgb(252,3,45)',
+            backgroundColor: 'rgb(1,2,21)'
+        }
     },
     {
         name: 'Rolex',
