@@ -132,7 +132,11 @@ export const tilesData = [
             '/portfolio/archive2/3.v4l.jpg',
             '/portfolio/archive2/1.wowvapor.jpg',
             '/portfolio/archive2/2.wowvapor.jpg',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: 'rgba(48,48,46)',
+            color: '#fff',
+        }
     },
 
     // {src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg", width: 139, height: 180,},
@@ -251,7 +255,11 @@ export const tilesData = [
         desc: 'Studied and maintained Internet2 approaches for optimizing video data delivery during a time when the internet was geared towards text and image data delivery only.  Paving the way for optimized video compression algorithms for online video streaming.',
         images: [
             '/portfolio/iCAIR.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#020925',
+            color: '#fff',
+        }
     },
     // {src: "https://picsum.photos/id/323/107/180", width: 107, height: 180},
     // { src: "/portfolio/Grid/MightyBytes.jpg", width: 492, height: 362,},
@@ -263,7 +271,11 @@ export const tilesData = [
         desc: 'Helped build education oriented websites for teaching Material Science to high school students.',
         images: [
             '/portfolio/InternationalVirtualInstitute.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: 'rgb(14,20,41)',
+            color: '#fff',
+        }
     },
     {
         name: 'Blitsy',
@@ -276,8 +288,9 @@ export const tilesData = [
             '/portfolio/blitsy2.png',
         ],
         arrowStyle: {
-            backgroundColor: '#f46b5e',
-            color: '#a0d9d8',
+            // backgroundColor: '#f46b5e',
+            backgroundColor: '#a0d9d8',
+            color: '#fff',
         }
     },
     {
