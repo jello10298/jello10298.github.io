@@ -144,25 +144,18 @@ const ProfileLayout = () => {
                         (One More Day), OMG (Oh my God), and BHAG (Big Hairy Audacious Goals)."
                         <br/>
                         <br/>
-                        Mom is a former beauty queen, chemist and medical student with a strong faith derived from the
-                        beautiful countryside of Albania, learning to live her best life in America. Her mantra is,
-                        "Keep
-                        Dad as busy and as happy as possible". Her favorite hobby is finding out where the children are
-                        hiding.
+                        Our sons are athletes, coders, musicians, scholars and scientists. They love to program in
+                        Scratch, Unity and Roblox. Our oldest has won competitions, played at Carnegie Hall (piano) and
+                        rose through the rank to the Illinois Science Fair with a financial prediction modeling program.
+                        They both love to participate in martial arts and love national competitions. We encourage them
+                        to constantly improve themselves and are always very proud of them.
                         <br/>
                         <br/>
-                        Our sons are athletes, musicians, scholars, scientists, fantasy lovers, and history buffs. Their
-                        mantra is "Under construction, close the door on your way out and bring us snacks, books, and
-                        video
-                        games. Specifically chicken nuggets, french fries, Minecraft, and Roblox. Or else, we'll burn
-                        down
-                        the house."
+                        Dad comes from a big family of amazing people and wishes he had time to hang out with all
+                        of them everyday.
                         <br/>
                         <br/>
-                        You can try and connect with Dad, but, come on ... he's bald and he's busy.
-                        <br/>
-                        <br/>
-                        In lieu of making him more busy, consider making a donation, in memory of his father, to <a
+                        In memory of his father, please consider making a donation to <a
                         href={'https://www.aidschicago.org/ways-to-give/'} target={'_blank'}>AIDS FOUNDATION CHICAGO</a>.
                     </p>
                     <br/>
@@ -182,7 +175,7 @@ const ProfileLayout = () => {
                 </TabPanel>
             </div>
             <div className="right-panel">
-                <h2 className={'alex-brush-regular'} style={{ margin: 0, fontSize: '2.3em'}}>The Magician</h2>
+                <h2 className={'alex-brush-regular'} style={{margin: 0, fontSize: '2.3em'}}>The Magician</h2>
                 <img
                     src='/Firefly-Dali-inspired-image-of-the-magician-tarot-card-that-contains-a-transparent-Augusta-window-in.png'
                     alt="Profile"/>
