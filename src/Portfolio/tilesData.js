@@ -149,6 +149,7 @@ export const tilesData = [
         ],
         arrowStyle: {
             backgroundColor: '#b60d29',
+            color: '#fff',
         },
     },
     {
@@ -206,7 +207,11 @@ export const tilesData = [
             '/portfolio/dominos/17.chicago.jpg',
             '/portfolio/dominos/18.milwaukee.jpg',
             '/portfolio/archive2/8.halloween.jpg',
-        ]
+        ],
+        arrowStyle: {
+            color: 'rgb(0,126,180)',
+            backgroundColor: '#ffce34',
+        }
     },
     // {src: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg", width: 195, height: 180,},
     {
@@ -217,7 +222,12 @@ export const tilesData = [
         desc: 'ETL developer charged with building the first ETL administration interface for loading terabytes of customer data from multiple data sources into one enterprise data warehouse using the fastest loading tools available.',
         images: [
             '/portfolio/Discover.png',
-        ]
+        ],
+        arrowStyle: {
+            background: 'radial-gradient(circle at 30% 30%, #FF9F00, #FF5A00, #E64A19)',
+            boxShadow: 'inset 0 0 30px rgba(0, 0, 0, 0.3)',
+            color: '#fff',
+        },
     },
     {
         name: 'Rehabilitation Institute of Chicago',
@@ -227,7 +237,11 @@ export const tilesData = [
         desc: 'Administered the journal submission site for IEEE Engineering in Medicine and Biology Society publications.',
         images: [
             '/portfolio/IEEE - EMBS.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#fd0028',
+            color: '#fff',
+        }
     },
     {
         name: 'iCAIR',
@@ -261,6 +275,10 @@ export const tilesData = [
             '/portfolio/blitsy3.jpg',
             '/portfolio/blitsy2.png',
         ],
+        arrowStyle: {
+            backgroundColor: '#f46b5e',
+            color: '#a0d9d8',
+        }
     },
     {
         name: 'Wellpoint',
@@ -270,7 +288,11 @@ export const tilesData = [
         desc: 'Redesigned the corporate website for American Imaging Management, a radiology tracking company that handled all claims authorizations for Wellpoint.',
         images: [
             '/portfolio/archive2/4.aim.jpg',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#184c9e',
+            color: '#fff',
+        }
     },
     {
         name: 'lightbank',
@@ -280,7 +302,11 @@ export const tilesData = [
         desc: 'Small contract to build out an administration panel for Poggled, lead by Northwestern Kellogg graduates Joesph Matthews and Sean Strother, a Groupon style platform for entertainment venues.',
         images: [
             '/portfolio/poggled.png',
-        ]
+        ],
+        arrowStyle: {
+            backgroundColor: '#f6861e',
+            color: '#fff',
+        }
     },
     // {
     //     name: 'Porsche',
