@@ -85,7 +85,7 @@ export const tilesData = [
             linear-gradient(45deg, #00A4EF, #0089D4) 0 100% / 50% 50%,
             linear-gradient(45deg, #FFB900, #FFA100) 100% 100% / 50% 50%`,
             backgroundRepeat: 'no-repeat',
-            color: '#fff',
+            color: 'rgb(74,74,74)',
         }
     },
     {
@@ -174,7 +174,11 @@ export const tilesData = [
         desc: 'Brought on-board to build a marketing website for Rolex, a luxury watch maker, through advertising agency Valtech_, located in West Town, Chicago. Leveraging the latest in design construction methodology for a beautiful website.',
         images: [
             '/portfolio/Rolex.png',
-        ]
+        ],
+        arrowStyle: {
+            color: 'rgb(162,116,24)',
+            backgroundColor: 'rgba(1,95,54)',
+        }
     },
     {
         name: "Domino's",
