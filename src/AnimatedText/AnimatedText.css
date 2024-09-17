@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     margin: 24px auto;
+    font-family: monospace;
 }
 
 .title_container {
