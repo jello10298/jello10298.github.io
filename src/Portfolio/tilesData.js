@@ -1,23 +1,8 @@
-import React from "react";
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
-
 export const defaultImages = [
     '/portfolio/archive1/2.nlb.jpg',
     '/portfolio/archive1/3.dtdoggy.jpg',
     '/portfolio/archive1/1.ama.jpg',
 ];
-
-export const getArrowBackgroundColor = (src) => {
-    return tilesData.filter((obj) => obj.src === src)[0].arrowBackgroundColor;
-}
-
-export const getArrowColor = (src) => {
-    return tilesData.filter((obj) => obj.src === src)[0].arrowColor;
-}
-
-export const getArrowBackground = (src) => {
-    return tilesData.filter((obj) => obj.src === src)[0].arrowBackground;
-}
 
 export const getArrowStyle = (src) => {
     return tilesData.filter((obj) => obj.src === src)[0].arrowStyle;
