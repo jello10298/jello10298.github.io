@@ -132,7 +132,7 @@ function Menu() {
                     {/*<li><NavLink to={'/'}>Home</NavLink></li>*/}
                     <li><NavLink to={'/about'}>About</NavLink></li>
                     <li><NavLink to={'/portfolio'}>Portfolio</NavLink></li>
-                    <li><NavLink to={'/timeline'}>Timeline</NavLink></li>
+                    {/*<li><NavLink to={'/timeline'}>Timeline</NavLink></li>*/}
                     <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'}
                            target={'_blank'}
                            rel={'noopener noreferrer'}
