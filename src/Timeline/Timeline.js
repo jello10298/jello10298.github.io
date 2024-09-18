@@ -78,6 +78,7 @@ const Timeline = () => {
     for (let year = startYear; year <= currentYear; year++) {
         _years.push(year);
     }
+    _years.reverse();
 
     const yearRefs = useRef({});
 
@@ -111,7 +112,7 @@ const Timeline = () => {
                 }
                 <div className={'years'}>
                     {
-                        years.reverse().map((year, i) => {
+                        years.map((year, i) => {
                             return (<div className={'year'} ref={yearRefs.current[year]} key={i}>{year}</div>);
                         })
                     }
