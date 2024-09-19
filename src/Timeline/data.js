@@ -81,7 +81,7 @@ export const experience = [
     },
     {
         employerName: 'United/Optum/Rally',
-        jobTitle: 'Senior Software Developer',
+        jobTitle: 'Senior Fullstack Developer',
         startDateMonth: 5,
         startDateYear: 2020,
         endDateMonth: 5,

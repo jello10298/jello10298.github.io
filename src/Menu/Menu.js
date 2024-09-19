@@ -133,16 +133,21 @@ function Menu() {
                     <li><NavLink to={'/about'}>About</NavLink></li>
                     <li><NavLink to={'/portfolio'}>Portfolio</NavLink></li>
                     <li><NavLink to={'/timeline'}>Timeline</NavLink></li>
-                    <li><a href={'/resume/Angelo Gonzalez - One Page.pdf'}
+                    <li><a href={'/resume/Angelo Gonzalez - Frontend.pdf'}
                            target={'_blank'}
                            rel={'noopener noreferrer'}
                            onClick={handleResumeClick}>
-                        Resume</a></li>
+                        Resume - frontend</a></li>
+                    <li><a href={'/resume/Angelo Gonzalez - Senior Fullstack Developer.pdf'}
+                           target={'_blank'}
+                           rel={'noopener noreferrer'}
+                           onClick={handleResumeClick}>
+                        Resume - fullstack</a></li>
                     <li><a href={'/resume/Angelo Gonzalez - Curriculum Vitae.pdf'}
                            target={'_blank'}
                            rel={'noopener noreferrer'}
-                           onClick={handleCVResumeClick}>Cirum
-                        Vitae</a></li>
+                           onClick={handleCVResumeClick}>
+                        <s>CV [beta]</s></a></li>
                     <li>
                         <hr width={'80%'} className={'styled'}/>
                     </li>

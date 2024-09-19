@@ -121,12 +121,30 @@ const ProfileLayout = () => {
                     <p>Role: Software Developer / Change Agent</p>
                     <p>Phone: <a href={'tel:+13123076448'}>+1 (312) 307-6448</a></p>
                     <a
-                        href='/resume/Angelo Gonzalez - One Page.pdf'
+                        href='/resume/Angelo%20Gonzalez%20-%20One%20Page.pdf'
                         target='_blank'
                         rel='noopener noreferrer'
                         className="button download-button resume-button"
                         onClick={handleResumeClick}>
-                        Download Resume &nbsp;
+                        Download One Page Resume &nbsp;
+                        <PictureAsPdfIcon/>
+                    </a>
+                    <a
+                        href='/resume/Angelo%20Gonzalez%20-%20Frontend.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
+                        Download Frontend Resume &nbsp;
+                        <PictureAsPdfIcon/>
+                    </a>
+                    <a
+                        href='/resume/Angelo%20Gonzalez%20-%20Senior%20Fullstack%20Developer.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
+                        Download Fullstack Resume &nbsp;
                         <PictureAsPdfIcon/>
                     </a>
                 </TabPanel>
@@ -164,12 +182,30 @@ const ProfileLayout = () => {
                     <p>Role: Father / Husband</p>
                     <p>Phone: <a href={'tel:+13123076448'}>+1 (312) 307-6448</a></p>
                     <a
-                        href='/resume/Angelo Gonzalez - One Page.pdf'
+                        href='/resume/Angelo%20Gonzalez%20-%20One%20Page.pdf'
                         target='_blank'
                         rel='noopener noreferrer'
                         className="button download-button resume-button"
                         onClick={handleResumeClick}>
-                        Download Resume &nbsp;
+                        Download One Page Resume &nbsp;
+                        <PictureAsPdfIcon/>
+                    </a>
+                    <a
+                        href='/resume/Angelo%20Gonzalez%20-%20Frontend.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
+                        Download Frontend Resume &nbsp;
+                        <PictureAsPdfIcon/>
+                    </a>
+                    <a
+                        href='/resume/Angelo%20Gonzalez%20-%20Senior%20Fullstack%20Developer.pdf'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className="button download-button resume-button"
+                        onClick={handleResumeClick}>
+                        Download Fullstack Resume &nbsp;
                         <PictureAsPdfIcon/>
                     </a>
                 </TabPanel>
