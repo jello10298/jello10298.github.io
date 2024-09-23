@@ -216,7 +216,7 @@ const ProfileLayout = () => {
                     src='/Firefly-Dali-inspired-image-of-the-magician-tarot-card-that-contains-a-transparent-Augusta-window-in.png'
                     alt="Profile"/>
                 <p>We all have natural talents, discover yours.</p>
-                <Link to={'/tarot'} className="button download-button play-button" style={{textDecoration: 'none'}}>
+                <Link to={'/tarot-v1'} className="button download-button play-button" style={{textDecoration: 'none'}}>
                     Play Dali Tarot Now&nbsp;
                     <RocketLaunchIcon/>
                 </Link>
